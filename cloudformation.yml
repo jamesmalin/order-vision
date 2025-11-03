@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS Lambda Function Deployment
+Parameters:
+  S3BucketParam:
+    Type: String
+    Description: The name of the S3 bucket
+  S3Key:
+    Type: String
+    Description: The name of the zip file
+  IAMRoleParam:
+    Type: String
+    Description: The ARN of the IAM Role
+  IAMUserParam:
+    Type: String
+    Description: The ARN of the IAM User
+  DeploymentIdParam:
+    Type: String
+    Description: Unique identifier for each deployment to force an update
+  LambdaFunctionNameParam:
+    Type: String
+    Description: The name of the Lambda function
+  LambdaFunctionHandlerParam:
+    Type: String
+    Description: The name of the Lambda function handler
+
+Resources:
+  MyLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Ref LambdaFunctionNameParam
+      Handler: !Ref LambdaFunctionHandlerParam
+      Role: !Ref IAMRoleParam
+      Runtime: nodejs20.x
+      MemorySize: 1024
+      Timeout: 60
+      EphemeralStorage:
+        Size: 512
+      Code:
+        S3Bucket: !Ref S3BucketParam
+        S3Key: !Ref S3Key
+      Environment:
+        Variables:
+          DEPLOYMENT_ID: !Ref DeploymentIdParam
+
+  MyFunctionURL:
+    Type: AWS::Lambda::Url
+    Properties:
+      AuthType: AWS_IAM
+      TargetFunctionArn: !GetAtt MyLambdaFunction.Arn
+
+  LambdaInvokePolicy:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunctionUrl
+      Principal: !Ref IAMUserParam
+      FunctionName: !Ref MyLambdaFunction
+      FunctionUrlAuthType: 'AWS_IAM'
+
+Outputs:
+  FunctionURL:
+    Description: "Lambda Function URL"
+    Value: !GetAtt MyFunctionURL.FunctionUrl

@@ -1,0 +1,20 @@
+{
+  "name": "classification",
+  "version": "1.0.0",
+  "description": "```bash rm order-vision-start-processing.zip rm -rf node_modules npm ci --only=production zip -r order-vision-start-processing.zip node_modules .env index.mjs invoke-auth.mjs anthropic.mjs extract-materials.mjs format-dates.mjs translate.mjs search.mjs search-material.mjs search-accountmanager.mjs search-customer.mjs knvp-check.mjs knvp.json credentials-documentai.json ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.821.0",
+    "@aws-sdk/client-s3": "^3.806.0",
+    "@aws-sdk/client-secrets-manager": "^3.821.0",
+    "@azure-rest/ai-document-intelligence": "^1.0.0",
+    "dotenv": "^16.5.0",
+    "openai": "^4.98.0",
+    "zod": "^3.24.4"
+  }
+}

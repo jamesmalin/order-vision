@@ -1,0 +1,23 @@
+{
+  "name": "order-vision-tracking-query",
+  "version": "1.0.0",
+  "description": "API endpoint for querying Order Vision tracking data",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "dynamodb",
+    "tracking",
+    "api"
+  ],
+  "author": "Bio-Rad Order Vision Team",
+  "license": "ISC"
+}

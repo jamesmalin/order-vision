@@ -1,0 +1,18 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "```bash npm install @aws-sdk/client-s3 @aws-sdk/s3-request-presigner @aws-sdk/client-lambda dotenv ```",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.894.0",
+    "@aws-sdk/client-s3": "^3.894.0",
+    "@aws-sdk/s3-request-presigner": "^3.894.0",
+    "dotenv": "^17.2.2"
+  }
+}

@@ -1,0 +1,391 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Order Vision Tracking System - Complete audit trail and monitoring for
+  document processing pipeline
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    AllowedValues:
+    - dev
+    - qa
+    - prod
+    Description: Environment name
+  BucketName:
+    Type: String
+    Description: S3 bucket name for the environment
+    Default: order-vision-ai-dev
+  ExistingRoleArn:
+    Type: String
+    Description: ARN of existing IAM role to use for Lambda functions
+    Default: arn:aws:iam::614250372661:role/service-role/order-vision-upload-role-hv9lejlk
+Globals:
+  Function:
+    Runtime: nodejs22.x
+    Timeout: 30
+    MemorySize: 256
+    Environment:
+      Variables:
+        ENVIRONMENT:
+          Ref: Environment
+        TRACKING_TABLE:
+          Ref: OrderVisionTrackingTable
+        TRACKING_QUEUE_URL:
+          Ref: TrackingQueue
+        PROCESSING_TIMEOUT_WARNING: 15
+        PROCESSING_TIMEOUT_CRITICAL: 30
+        CLASSIFICATION_TIMEOUT: 10
+        SAP_INTEGRATION_TIMEOUT: 5
+        ERROR_RATE_WARNING: 5
+        ERROR_RATE_CRITICAL: 10
+        QUEUE_DEPTH_WARNING: 25
+        QUEUE_DEPTH_CRITICAL: 50
+        MAX_RETRIES: 3
+        RETRY_DELAY_MINUTES: 5
+        ALERT_BATCH_SIZE: 10
+        ALERT_COOLDOWN_MINUTES: 15
+        DAILY_SUMMARY_HOUR: 8
+        SUCCESS_RECORD_TTL_DAYS: 90
+        ERROR_RECORD_TTL_DAYS: 365
+Resources:
+  OrderVisionTrackingTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName:
+        Fn::Sub: order-vision-tracking-${Environment}
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+      - AttributeName: timestamp
+        AttributeType: N
+      - AttributeName: event_type
+        AttributeType: S
+      - AttributeName: status
+        AttributeType: S
+      - AttributeName: event_timestamp
+        AttributeType: S
+      KeySchema:
+      - AttributeName: timestamp
+        KeyType: HASH
+      - AttributeName: event_type
+        KeyType: RANGE
+      GlobalSecondaryIndexes:
+      - IndexName: status-timestamp-index
+        KeySchema:
+        - AttributeName: status
+          KeyType: HASH
+        - AttributeName: event_timestamp
+          KeyType: RANGE
+        Projection:
+          ProjectionType: ALL
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      Tags:
+      - Key: Environment
+        Value:
+          Ref: Environment
+      - Key: Application
+        Value: OrderVision
+      - Key: Component
+        Value: Tracking
+  TrackingQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName:
+        Fn::Sub: order-vision-tracking-queue-${Environment}
+      VisibilityTimeout: 300
+      MessageRetentionPeriod: 1209600
+      RedrivePolicy:
+        deadLetterTargetArn:
+          Fn::GetAtt:
+          - TrackingDeadLetterQueue
+          - Arn
+        maxReceiveCount: 3
+      Tags:
+      - Key: Environment
+        Value:
+          Ref: Environment
+      - Key: Application
+        Value: OrderVision
+  TrackingDeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName:
+        Fn::Sub: order-vision-tracking-dlq-${Environment}
+      MessageRetentionPeriod: 1209600
+      Tags:
+      - Key: Environment
+        Value:
+          Ref: Environment
+      - Key: Application
+        Value: OrderVision
+  TrackingFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName:
+        Fn::Sub: order-vision-tracking-${Environment}
+      CodeUri: TrackingFunction
+      Handler: index.handler
+      Description: Processes tracking events and maintains audit trail
+      Role:
+        Ref: ExistingRoleArn
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue:
+              Fn::GetAtt:
+              - TrackingQueue
+              - Arn
+            BatchSize: 10
+            MaximumBatchingWindowInSeconds: 5
+      Tags:
+        Environment:
+          Ref: Environment
+        Application: OrderVision
+        Component: Tracking
+    Metadata:
+      SamResourceId: TrackingFunction
+  MonitoringFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName:
+        Fn::Sub: order-vision-monitoring-${Environment}
+      CodeUri: MonitoringFunction
+      Handler: index.handler
+      Description: Monitors processing pipeline and sends alerts for stuck/failed
+        items
+      Timeout: 300
+      Role:
+        Ref: ExistingRoleArn
+      Events:
+        MonitoringSchedule:
+          Type: Schedule
+          Properties:
+            Schedule: rate(5 minutes)
+            Description: Check for stuck or failed processing items
+        DailySummarySchedule:
+          Type: Schedule
+          Properties:
+            Schedule: cron(0 8 * * ? *)
+            Description: Send daily processing summary
+            Input: '{"type": "daily_summary"}'
+      Tags:
+        Environment:
+          Ref: Environment
+        Application: OrderVision
+        Component: Monitoring
+    Metadata:
+      SamResourceId: MonitoringFunction
+  QueryFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName:
+        Fn::Sub: order-vision-tracking-query-${Environment}
+      CodeUri: QueryFunction
+      Handler: index.handler
+      Description: API endpoint for querying tracking data with flexible search parameters
+      Timeout: 30
+      Role:
+        Ref: ExistingRoleArn
+      Events:
+        TrackingQueryApi:
+          Type: Api
+          Properties:
+            RestApiId:
+              Ref: TrackingApi
+            Path: /tracking/query
+            Method: GET
+        TrackingQueryOptionsApi:
+          Type: Api
+          Properties:
+            RestApiId:
+              Ref: TrackingApi
+            Path: /tracking/query
+            Method: OPTIONS
+      Tags:
+        Environment:
+          Ref: Environment
+        Application: OrderVision
+        Component: QueryAPI
+    Metadata:
+      SamResourceId: QueryFunction
+  TrackingApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name:
+        Fn::Sub: order-vision-tracking-api-${Environment}
+      StageName:
+        Ref: Environment
+      Description: REST API for querying Order Vision tracking data
+      Cors:
+        AllowMethods: '''GET,OPTIONS'''
+        AllowHeaders: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+        AllowOrigin: '''*'''
+      Tags:
+        Environment:
+          Ref: Environment
+        Application: OrderVision
+        Component: API
+  TrackingQueueDepthAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName:
+        Fn::Sub: OrderVision-TrackingQueue-Depth-${Environment}
+      AlarmDescription: Tracking queue depth is too high
+      MetricName: ApproximateNumberOfVisibleMessages
+      Namespace: AWS/SQS
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 100
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+      - Name: QueueName
+        Value:
+          Fn::GetAtt:
+          - TrackingQueue
+          - QueueName
+      TreatMissingData: notBreaching
+  TrackingFunctionErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName:
+        Fn::Sub: OrderVision-TrackingFunction-Errors-${Environment}
+      AlarmDescription: Tracking function is experiencing errors
+      MetricName: Errors
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+      - Name: FunctionName
+        Value:
+          Ref: TrackingFunction
+      TreatMissingData: notBreaching
+  TrackingAlarmsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName:
+        Fn::Sub: order-vision-tracking-alarms-${Environment}
+      DisplayName: Order Vision Tracking System Alarms
+      Tags:
+      - Key: Environment
+        Value:
+          Ref: Environment
+      - Key: Application
+        Value: OrderVision
+Outputs:
+  TrackingTableName:
+    Description: DynamoDB table name for tracking
+    Value:
+      Ref: OrderVisionTrackingTable
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-TrackingTable
+  TrackingQueueUrl:
+    Description: SQS queue URL for sending tracking events
+    Value:
+      Ref: TrackingQueue
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-TrackingQueue
+  TrackingQueueArn:
+    Description: SQS queue ARN for IAM policies
+    Value:
+      Fn::GetAtt:
+      - TrackingQueue
+      - Arn
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-TrackingQueueArn
+  TrackingFunctionName:
+    Description: Tracking Lambda function name
+    Value:
+      Ref: TrackingFunction
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-TrackingFunction
+  MonitoringFunctionName:
+    Description: Monitoring Lambda function name
+    Value:
+      Ref: MonitoringFunction
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-MonitoringFunction
+  QueryFunctionName:
+    Description: Query API Lambda function name
+    Value:
+      Ref: QueryFunction
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-QueryFunction
+  TrackingApiUrl:
+    Description: API Gateway endpoint URL for tracking queries
+    Value:
+      Fn::Sub: https://${TrackingApi}.execute-api.${AWS::Region}.amazonaws.com/${Environment}
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-TrackingApiUrl
+  TrackingQueryEndpoint:
+    Description: Full endpoint URL for tracking queries
+    Value:
+      Fn::Sub: https://${TrackingApi}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/tracking/query
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-TrackingQueryEndpoint
+  ExistingRoleArn:
+    Description: Existing IAM Role ARN used by Order Vision lambdas
+    Value:
+      Ref: ExistingRoleArn
+    Export:
+      Name:
+        Fn::Sub: ${AWS::StackName}-ExistingRole
+  RequiredPermissions:
+    Description: Required permissions to add to the existing IAM role
+    Value:
+      Fn::Sub: 'The existing IAM role (${ExistingRoleArn}) needs these additional
+        permissions:
+
+
+        DynamoDB:
+
+        - dynamodb:PutItem on ${OrderVisionTrackingTable.Arn}
+
+        - dynamodb:GetItem on ${OrderVisionTrackingTable.Arn}
+
+        - dynamodb:UpdateItem on ${OrderVisionTrackingTable.Arn}
+
+        - dynamodb:DeleteItem on ${OrderVisionTrackingTable.Arn}
+
+        - dynamodb:Query on ${OrderVisionTrackingTable.Arn}
+
+        - dynamodb:Scan on ${OrderVisionTrackingTable.Arn}
+
+        - dynamodb:Query on ${OrderVisionTrackingTable.Arn}/index/*
+
+        - dynamodb:Scan on ${OrderVisionTrackingTable.Arn}/index/*
+
+
+        SQS:
+
+        - sqs:SendMessage on ${TrackingQueue.Arn}
+
+        - sqs:ReceiveMessage on ${TrackingQueue.Arn}
+
+        - sqs:DeleteMessage on ${TrackingQueue.Arn}
+
+        - sqs:GetQueueAttributes on ${TrackingQueue.Arn}
+
+        - sqs:SendMessage on ${TrackingDeadLetterQueue.Arn}
+
+
+        Lambda:
+
+        - lambda:InvokeFunction on arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:cloudwatch-alerts-${Environment}
+
+        '

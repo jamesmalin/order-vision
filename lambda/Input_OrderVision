@@ -1,0 +1,3253 @@
+{
+    "BillingAddress": {
+        "type": "address",
+        "content": "520 SOUTH ROCK BLVD\nReno, NV 89502-4112",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    2.9742,
+                    0.8426,
+                    4.2555,
+                    0.8415,
+                    4.2557,
+                    1.0527,
+                    2.9744,
+                    1.0539
+                ]
+            }
+        ],
+        "confidence": 0.879,
+        "spans": [
+            {
+                "offset": 177,
+                "length": 19
+            },
+            {
+                "offset": 223,
+                "length": 19
+            }
+        ],
+        "valueAddress": {
+            "houseNumber": "520",
+            "road": "SOUTH ROCK BLVD",
+            "postalCode": "89502-4112",
+            "city": "Reno",
+            "state": "NV",
+            "streetAddress": "520 SOUTH ROCK BLVD"
+        }
+    },
+    "BillingAddressRecipient": {
+        "type": "string",
+        "valueString": "ATTN: ACCOUNTS PAYABLE",
+        "content": "ATTN: ACCOUNTS PAYABLE",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    2.9691,
+                    0.7294,
+                    4.4548,
+                    0.7283,
+                    4.4549,
+                    0.8299,
+                    2.9692,
+                    0.8311
+                ]
+            }
+        ],
+        "confidence": 0.892,
+        "spans": [
+            {
+                "offset": 90,
+                "length": 22
+            }
+        ]
+    },
+    "BillingPhoneNumber": {
+        "type": "phoneNumber",
+        "valuePhoneNumber": "+17756836851;ext=2246851",
+        "content": "(775) 683-6851 Ext\n2246851",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    2.9984,
+                    1.1744,
+                    4.8477,
+                    1.1748,
+                    4.8477,
+                    1.2842,
+                    2.9984,
+                    1.2838
+                ]
+            }
+        ],
+        "confidence": 0.546,
+        "spans": [
+            {
+                "offset": 278,
+                "length": 18
+            },
+            {
+                "offset": 300,
+                "length": 7
+            }
+        ]
+    },
+    "CustomerAddress": {
+        "type": "address",
+        "content": "NOBEL",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    1.0239,
+                    1.9862,
+                    1.3602,
+                    1.9866,
+                    1.36,
+                    2.0899,
+                    1.0239,
+                    2.0903
+                ]
+            }
+        ],
+        "confidence": 0.318,
+        "spans": [
+            {
+                "offset": 511,
+                "length": 5
+            }
+        ],
+        "valueAddress": {
+            "city": "NOBEL",
+            "streetAddress": ""
+        }
+    },
+    "CustomerId": {
+        "type": "string",
+        "valueString": "04311195",
+        "content": "04311195",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    4.535,
+                    2.5268,
+                    5.0002,
+                    2.5251,
+                    5.0001,
+                    2.6192,
+                    4.5349,
+                    2.6191
+                ]
+            }
+        ],
+        "confidence": 0.82,
+        "spans": [
+            {
+                "offset": 638,
+                "length": 8
+            }
+        ]
+    },
+    "CustomerName": {
+        "type": "string",
+        "valueString": "ATTN: ACCOUNTS PAYABLE",
+        "content": "ATTN: ACCOUNTS PAYABLE",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    2.9691,
+                    0.7294,
+                    4.4548,
+                    0.7283,
+                    4.4549,
+                    0.8299,
+                    2.9692,
+                    0.8311
+                ]
+            }
+        ],
+        "confidence": 0.892,
+        "spans": [
+            {
+                "offset": 90,
+                "length": 22
+            }
+        ]
+    },
+    "CustomerPhoneNumber": {
+        "type": "phoneNumber",
+        "valuePhoneNumber": "+18002246723",
+        "content": "800-224-6723",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    0.6269,
+                    2.6586,
+                    1.4272,
+                    2.6534,
+                    1.427,
+                    2.7527,
+                    0.6269,
+                    2.7529
+                ]
+            }
+        ],
+        "confidence": 0.299,
+        "spans": [
+            {
+                "offset": 684,
+                "length": 12
+            }
+        ]
+    },
+    "DueDate": {
+        "type": "date",
+        "valueDate": "2024-01-16",
+        "content": "1/16/24",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    6.8543,
+                    0.84,
+                    7.3158,
+                    0.8391,
+                    7.3158,
+                    0.9462,
+                    6.8543,
+                    0.9467
+                ]
+            }
+        ],
+        "confidence": 0.893,
+        "spans": [
+            {
+                "offset": 215,
+                "length": 7
+            }
+        ]
+    },
+    "InvoiceDate": {
+        "type": "date",
+        "valueDate": "2024-01-15",
+        "content": "1/15/24",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    6.0559,
+                    0.7304,
+                    6.5189,
+                    0.7314,
+                    6.5189,
+                    0.833,
+                    6.056,
+                    0.8315
+                ]
+            }
+        ],
+        "confidence": 0.936,
+        "spans": [
+            {
+                "offset": 119,
+                "length": 7
+            }
+        ]
+    },
+    "InvoiceId": {
+        "content": "AI_47321_23082537",
+        "valueString": "AI_47321_23082537"
+    },
+    "InvoiceTotal": {
+        "type": "currency",
+        "valueCurrency": {
+            "amount": 6874,
+            "currencyCode": "USD"
+        },
+        "content": "6874.00",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    7.6839,
+                    10.0908,
+                    8.2067,
+                    10.0917,
+                    8.2067,
+                    10.2022,
+                    7.6838,
+                    10.2019
+                ]
+            }
+        ],
+        "confidence": 0.93,
+        "spans": [
+            {
+                "offset": 2205,
+                "length": 7
+            }
+        ]
+    },
+    "Items": {
+        "type": "array",
+        "valueArray": [
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 456,
+                            "currencyCode": "USD"
+                        },
+                        "content": "456.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7291,
+                                    4.3324,
+                                    8.179,
+                                    4.3336,
+                                    8.179,
+                                    4.4454,
+                                    7.7288,
+                                    4.4454
+                                ]
+                            }
+                        ],
+                        "confidence": 0.902,
+                        "spans": [
+                            {
+                                "offset": 1492,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "IMMUNOASSAY PLUS CTRL L1 5ML",
+                        "content": "IMMUNOASSAY PLUS CTRL L1 5ML",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1466,
+                                    4.4861,
+                                    3.2594,
+                                    4.4811,
+                                    3.2597,
+                                    4.5963,
+                                    1.1469,
+                                    4.6013
+                                ]
+                            }
+                        ],
+                        "confidence": 0.887,
+                        "spans": [
+                            {
+                                "offset": 1499,
+                                "length": 28
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "776-2235",
+                        "content": "776-2235",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2853,
+                                    4.3283,
+                                    0.891,
+                                    4.3303,
+                                    0.891,
+                                    4.4475,
+                                    0.2855,
+                                    4.4444
+                                ]
+                            }
+                        ],
+                        "confidence": 0.865,
+                        "spans": [
+                            {
+                                "offset": 1464,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6595,
+                                    4.339,
+                                    4.7425,
+                                    4.34,
+                                    4.7425,
+                                    4.439,
+                                    4.6588,
+                                    4.4392
+                                ]
+                            }
+                        ],
+                        "confidence": 0.689,
+                        "spans": [
+                            {
+                                "offset": 1477,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 228,
+                            "currencyCode": "USD"
+                        },
+                        "content": "228.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6021,
+                                    4.331,
+                                    7.0612,
+                                    4.3327,
+                                    7.0612,
+                                    4.4473,
+                                    6.6019,
+                                    4.4469
+                                ]
+                            }
+                        ],
+                        "confidence": 0.901,
+                        "spans": [
+                            {
+                                "offset": 1485,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "776-2235\n371\n2\n12/Bx\n228.00\n456.00\nIMMUNOASSAY PLUS CTRL L1 5ML",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2853,
+                            4.3283,
+                            8.179,
+                            4.3283,
+                            8.179,
+                            4.5988,
+                            0.2853,
+                            4.5988
+                        ]
+                    }
+                ],
+                "confidence": 0.912,
+                "spans": [
+                    {
+                        "offset": 1464,
+                        "length": 63
+                    }
+                ],
+                "material": "371",
+                "materialai": [
+                    {
+                        "id": "34335",
+                        "score": 0.3078275754746343,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00105345",
+                            "material": "34335",
+                            "materialDescription": "ACCESS HCV AB PLUS CONTROLS",
+                            "materialStatus": "Z9",
+                            "materialType": "Z003",
+                            "productHierarchy": "31751301484515A"
+                        }
+                    },
+                    {
+                        "id": "16001256",
+                        "score": 0.29158730158730156,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "16001256",
+                            "materialDescription": "ENA PLUS IFU (REV B)",
+                            "materialStatus": "Z2",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    },
+                    {
+                        "id": "10048196",
+                        "score": 0.2842956349206349,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "10048196",
+                            "materialDescription": "2-3Copy SMN Positive Ctrl Bulk",
+                            "materialStatus": "",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "IMMUNOASSAY PLUS CTRL L1 5ML",
+                "material2": "371",
+                "material2ai": [
+                    {
+                        "id": "371",
+                        "score": 0.33325396825396825,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00000178",
+                            "material": "371",
+                            "materialDescription": "IA PLUS 1 LYPH 12X5ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "132518010171290"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 456,
+                            "currencyCode": "USD"
+                        },
+                        "content": "456.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7297,
+                                    4.7749,
+                                    8.179,
+                                    4.776,
+                                    8.179,
+                                    4.8881,
+                                    7.7297,
+                                    4.8883
+                                ]
+                            }
+                        ],
+                        "confidence": 0.901,
+                        "spans": [
+                            {
+                                "offset": 1556,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "IMMUNOASSAY PLUS CTRL L3 5ML",
+                        "content": "IMMUNOASSAY PLUS CTRL L3 5ML",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1465,
+                                    4.9266,
+                                    3.2594,
+                                    4.9237,
+                                    3.2596,
+                                    5.0395,
+                                    1.1467,
+                                    5.0425
+                                ]
+                            }
+                        ],
+                        "confidence": 0.887,
+                        "spans": [
+                            {
+                                "offset": 1563,
+                                "length": 28
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "104-2771",
+                        "content": "104-2771",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2865,
+                                    4.7752,
+                                    0.891,
+                                    4.7749,
+                                    0.891,
+                                    4.8883,
+                                    0.2876,
+                                    4.8883
+                                ]
+                            }
+                        ],
+                        "confidence": 0.853,
+                        "spans": [
+                            {
+                                "offset": 1528,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6591,
+                                    4.7811,
+                                    4.7425,
+                                    4.7829,
+                                    4.7425,
+                                    4.884,
+                                    4.6585,
+                                    4.8831
+                                ]
+                            }
+                        ],
+                        "confidence": 0.617,
+                        "spans": [
+                            {
+                                "offset": 1541,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 228,
+                            "currencyCode": "USD"
+                        },
+                        "content": "228.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.603,
+                                    4.775,
+                                    7.0612,
+                                    4.776,
+                                    7.0612,
+                                    4.8894,
+                                    6.6031,
+                                    4.8904
+                                ]
+                            }
+                        ],
+                        "confidence": 0.902,
+                        "spans": [
+                            {
+                                "offset": 1549,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "104-2771\n373\n2\n12/Bx\n228.00\n456.00\nIMMUNOASSAY PLUS CTRL L3 5ML",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2865,
+                            4.775,
+                            8.179,
+                            4.7733,
+                            8.1791,
+                            5.0395,
+                            0.2866,
+                            5.0413
+                        ]
+                    }
+                ],
+                "confidence": 0.913,
+                "spans": [
+                    {
+                        "offset": 1528,
+                        "length": 63
+                    }
+                ],
+                "material": "373",
+                "materialai": [
+                    {
+                        "id": "104-2771",
+                        "score": 0,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "104-2771",
+                            "materialDescription": "CYCLOSPORIN ELEVATED CTRL",
+                            "materialStatus": "Z9",
+                            "materialType": "Z003",
+                            "productHierarchy": "112212510451132"
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "IMMUNOASSAY PLUS CTRL L3 5ML",
+                "material2": "373",
+                "material2ai": [
+                    {
+                        "id": "104-2771",
+                        "score": 0.2776190476190476,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "104-2771",
+                            "materialDescription": "CYCLOSPORIN ELEVATED CTRL",
+                            "materialStatus": "Z9",
+                            "materialType": "Z003",
+                            "productHierarchy": "112212510451132"
+                        }
+                    },
+                    {
+                        "id": "373",
+                        "score": 0.34658730158730156,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00000180",
+                            "material": "373",
+                            "materialDescription": "IA PLUS 3 LYPH 12X5ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "132518010171290"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 849,
+                            "currencyCode": "USD"
+                        },
+                        "content": "849.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7267,
+                                    5.2168,
+                                    8.179,
+                                    5.2184,
+                                    8.179,
+                                    5.3312,
+                                    7.7269,
+                                    5.3312
+                                ]
+                            }
+                        ],
+                        "confidence": 0.9,
+                        "spans": [
+                            {
+                                "offset": 1621,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "LYPHOCHEK IMMUN SPEC CNTR LEVEL 1",
+                        "content": "LYPHOCHEK IMMUN SPEC CNTR LEVEL 1",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1418,
+                                    5.3694,
+                                    3.6247,
+                                    5.3676,
+                                    3.6248,
+                                    5.4843,
+                                    1.1419,
+                                    5.4861
+                                ]
+                            }
+                        ],
+                        "confidence": 0.882,
+                        "spans": [
+                            {
+                                "offset": 1628,
+                                "length": 33
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "122-3662",
+                        "content": "122-3662",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2888,
+                                    5.219,
+                                    0.891,
+                                    5.2195,
+                                    0.891,
+                                    5.3304,
+                                    0.2892,
+                                    5.331
+                                ]
+                            }
+                        ],
+                        "confidence": 0.866,
+                        "spans": [
+                            {
+                                "offset": 1592,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 3,
+                        "content": "3",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6619,
+                                    5.2242,
+                                    4.737,
+                                    5.2253,
+                                    4.737,
+                                    5.3241,
+                                    4.6614,
+                                    5.323
+                                ]
+                            }
+                        ],
+                        "confidence": 0.852,
+                        "spans": [
+                            {
+                                "offset": 1607,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 283,
+                            "currencyCode": "USD"
+                        },
+                        "content": "283.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6039,
+                                    5.2176,
+                                    7.0612,
+                                    5.2194,
+                                    7.0612,
+                                    5.3309,
+                                    6.6041,
+                                    5.3312
+                                ]
+                            }
+                        ],
+                        "confidence": 0.898,
+                        "spans": [
+                            {
+                                "offset": 1614,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "122-3662\n27124\n3\n6/Pk\n283.00\n849.00\nLYPHOCHEK IMMUN SPEC CNTR LEVEL 1",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2888,
+                            5.2174,
+                            8.179,
+                            5.2168,
+                            8.179,
+                            5.4844,
+                            0.2888,
+                            5.4851
+                        ]
+                    }
+                ],
+                "confidence": 0.91,
+                "spans": [
+                    {
+                        "offset": 1592,
+                        "length": 69
+                    }
+                ],
+                "material": "27124",
+                "materialai": [
+                    {
+                        "id": "2503001REF",
+                        "score": 0.3094949494949495,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00001388",
+                            "material": "2503001REF",
+                            "materialDescription": "VNBS SCP BUFFER 1 REFERENCE",
+                            "materialStatus": "",
+                            "materialType": "Z005",
+                            "productHierarchy": "18743921129217B"
+                        }
+                    },
+                    {
+                        "id": "2200291",
+                        "score": 0.30450438450438455,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "2200291",
+                            "materialDescription": "D10 BUBBLE DETECTOR 1",
+                            "materialStatus": "",
+                            "materialType": "Z005",
+                            "productHierarchy": "112112810321377"
+                        }
+                    },
+                    {
+                        "id": "11000018",
+                        "score": 0.3003083003952569,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "11000018",
+                            "materialDescription": "HBAdvisor 2 Connection 1 Yr Ser Coverage",
+                            "materialStatus": "Z9",
+                            "materialType": "Z001",
+                            "productHierarchy": ""
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "LYPHOCHEK IMMUN SPEC CNTR LEVEL 1",
+                "material2": "27124",
+                "material2ai": [
+                    {
+                        "id": "27124",
+                        "score": 0.29486345811051695,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00001321",
+                            "material": "27124",
+                            "materialDescription": "SPECIALTY IA LYPH 1 6x2ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "132518610171132"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 849,
+                            "currencyCode": "USD"
+                        },
+                        "content": "849.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7265,
+                                    5.6647,
+                                    8.179,
+                                    5.6664,
+                                    8.179,
+                                    5.7787,
+                                    7.7266,
+                                    5.7796
+                                ]
+                            }
+                        ],
+                        "confidence": 0.896,
+                        "spans": [
+                            {
+                                "offset": 1691,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "LYPHOCHEK IMMUN SPEC CNTR LEVEL 3",
+                        "content": "LYPHOCHEK IMMUN SPEC CNTR LEVEL 3",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1419,
+                                    5.8108,
+                                    3.6302,
+                                    5.8099,
+                                    3.6302,
+                                    5.9278,
+                                    1.1419,
+                                    5.9286
+                                ]
+                            }
+                        ],
+                        "confidence": 0.878,
+                        "spans": [
+                            {
+                                "offset": 1698,
+                                "length": 33
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "122-3665",
+                        "content": "122-3665",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2883,
+                                    5.6689,
+                                    0.891,
+                                    5.6687,
+                                    0.891,
+                                    5.7781,
+                                    0.2888,
+                                    5.7791
+                                ]
+                            }
+                        ],
+                        "confidence": 0.86,
+                        "spans": [
+                            {
+                                "offset": 1662,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 3,
+                        "content": "3",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6638,
+                                    5.6732,
+                                    4.737,
+                                    5.6732,
+                                    4.737,
+                                    5.7716,
+                                    4.6633,
+                                    5.7714
+                                ]
+                            }
+                        ],
+                        "confidence": 0.611,
+                        "spans": [
+                            {
+                                "offset": 1677,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 283,
+                            "currencyCode": "USD"
+                        },
+                        "content": "283.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6057,
+                                    5.6653,
+                                    7.0612,
+                                    5.6679,
+                                    7.0612,
+                                    5.7795,
+                                    6.606,
+                                    5.7796
+                                ]
+                            }
+                        ],
+                        "confidence": 0.897,
+                        "spans": [
+                            {
+                                "offset": 1684,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "122-3665\n27126\n3\n6/Pk\n283.00\n849.00\nLYPHOCHEK IMMUN SPEC CNTR LEVEL 3",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2883,
+                            5.666,
+                            8.179,
+                            5.6646,
+                            8.179,
+                            5.9272,
+                            0.2883,
+                            5.9285
+                        ]
+                    }
+                ],
+                "confidence": 0.91,
+                "spans": [
+                    {
+                        "offset": 1662,
+                        "length": 69
+                    }
+                ],
+                "material": "27126",
+                "materialai": [
+                    {
+                        "id": "9109018",
+                        "score": 0.319047619047619,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "9109018",
+                            "materialDescription": "CIRCULAR LEVEL",
+                            "materialStatus": "",
+                            "materialType": "Z002",
+                            "productHierarchy": "265930514311898"
+                        }
+                    },
+                    {
+                        "id": "22012969",
+                        "score": 0.319047619047619,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "22012969",
+                            "materialDescription": "CIRCULAR LEVEL",
+                            "materialStatus": "Z2",
+                            "materialType": "Z007",
+                            "productHierarchy": ""
+                        }
+                    },
+                    {
+                        "id": "12022871",
+                        "score": 0.3189121989121989,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "12022871",
+                            "materialDescription": "3 TIER STEEL TABLE",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "14221251045483A"
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "LYPHOCHEK IMMUN SPEC CNTR LEVEL 3",
+                "material2": "27126",
+                "material2ai": [
+                    {
+                        "id": "27126",
+                        "score": 0.29486345811051695,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00001323",
+                            "material": "27126",
+                            "materialDescription": "SPECIALTY IA LYPH 3 6x2ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "132518610171132"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 1130,
+                            "currencyCode": "USD"
+                        },
+                        "content": "1130.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.6507,
+                                    6.1082,
+                                    8.179,
+                                    6.1096,
+                                    8.179,
+                                    6.2224,
+                                    7.6508,
+                                    6.2224
+                                ]
+                            }
+                        ],
+                        "confidence": 0.903,
+                        "spans": [
+                            {
+                                "offset": 1763,
+                                "length": 7
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "LIQUICHEK SPCLTY IMMUN CT LEVEL I",
+                        "content": "LIQUICHEK SPCLTY IMMUN CT LEVEL I",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1403,
+                                    6.2602,
+                                    3.6302,
+                                    6.2555,
+                                    3.6304,
+                                    6.3779,
+                                    1.1405,
+                                    6.3826
+                                ]
+                            }
+                        ],
+                        "confidence": 0.887,
+                        "spans": [
+                            {
+                                "offset": 1771,
+                                "length": 33
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "106-3832",
+                        "content": "106-3832",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2884,
+                                    6.1091,
+                                    0.891,
+                                    6.1097,
+                                    0.8907,
+                                    6.2224,
+                                    0.2886,
+                                    6.2224
+                                ]
+                            }
+                        ],
+                        "confidence": 0.88,
+                        "spans": [
+                            {
+                                "offset": 1732,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6622,
+                                    6.1145,
+                                    4.737,
+                                    6.1158,
+                                    4.737,
+                                    6.2154,
+                                    4.6617,
+                                    6.2148
+                                ]
+                            }
+                        ],
+                        "confidence": 0.877,
+                        "spans": [
+                            {
+                                "offset": 1745,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 565,
+                            "currencyCode": "USD"
+                        },
+                        "content": "565.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.607,
+                                    6.1085,
+                                    7.0612,
+                                    6.11,
+                                    7.0612,
+                                    6.2224,
+                                    6.6071,
+                                    6.2224
+                                ]
+                            }
+                        ],
+                        "confidence": 0.903,
+                        "spans": [
+                            {
+                                "offset": 1756,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "106-3832\n364\n2\n6x5ml/Bx\n565.00\n1130.00\nLIQUICHEK SPCLTY IMMUN CT LEVEL I",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2884,
+                            6.1016,
+                            8.1791,
+                            6.1087,
+                            8.1789,
+                            6.3882,
+                            0.2882,
+                            6.3811
+                        ]
+                    }
+                ],
+                "confidence": 0.907,
+                "spans": [
+                    {
+                        "offset": 1732,
+                        "length": 72
+                    }
+                ],
+                "material": "364",
+                "materialai": [
+                    {
+                        "id": "9109018",
+                        "score": 0.31451948051948053,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "9109018",
+                            "materialDescription": "CIRCULAR LEVEL",
+                            "materialStatus": "",
+                            "materialType": "Z002",
+                            "productHierarchy": "265930514311898"
+                        }
+                    },
+                    {
+                        "id": "22012969",
+                        "score": 0.31451948051948053,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "22012969",
+                            "materialDescription": "CIRCULAR LEVEL",
+                            "materialStatus": "Z2",
+                            "materialType": "Z007",
+                            "productHierarchy": ""
+                        }
+                    },
+                    {
+                        "id": "16011105",
+                        "score": 0.2848244348244348,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "16011105",
+                            "materialDescription": "CAMERA BLACKFLY BOARD LEVEL",
+                            "materialStatus": "Z2",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "LIQUICHEK SPCLTY IMMUN CT LEVEL I",
+                "material2": "364",
+                "material2ai": [
+                    {
+                        "id": "364",
+                        "score": 0.2717171717171717,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00105237",
+                            "material": "364",
+                            "materialDescription": "SPECIALTY IA LIQ 1 6X5ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "132518610171262"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 1130,
+                            "currencyCode": "USD"
+                        },
+                        "content": "1130.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.6496,
+                                    6.5507,
+                                    8.179,
+                                    6.552,
+                                    8.179,
+                                    6.6665,
+                                    7.6497,
+                                    6.6669
+                                ]
+                            }
+                        ],
+                        "confidence": 0.904,
+                        "spans": [
+                            {
+                                "offset": 1836,
+                                "length": 7
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "LIQUICHEK SPCLTY IMMUN CT LEVLIII",
+                        "content": "LIQUICHEK SPCLTY IMMUN CT LEVLIII",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1403,
+                                    6.7021,
+                                    3.6302,
+                                    6.7004,
+                                    3.6303,
+                                    6.8216,
+                                    1.1404,
+                                    6.8233
+                                ]
+                            }
+                        ],
+                        "confidence": 0.887,
+                        "spans": [
+                            {
+                                "offset": 1844,
+                                "length": 33
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "106-3834",
+                        "content": "106-3834",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2874,
+                                    6.5519,
+                                    0.891,
+                                    6.5534,
+                                    0.891,
+                                    6.6653,
+                                    0.2876,
+                                    6.6653
+                                ]
+                            }
+                        ],
+                        "confidence": 0.863,
+                        "spans": [
+                            {
+                                "offset": 1805,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6606,
+                                    6.5577,
+                                    4.7425,
+                                    6.5587,
+                                    4.7425,
+                                    6.6586,
+                                    4.66,
+                                    6.6586
+                                ]
+                            }
+                        ],
+                        "confidence": 0.88,
+                        "spans": [
+                            {
+                                "offset": 1818,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 565,
+                            "currencyCode": "USD"
+                        },
+                        "content": "565.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6077,
+                                    6.5516,
+                                    7.0612,
+                                    6.5538,
+                                    7.0612,
+                                    6.6653,
+                                    6.6078,
+                                    6.6653
+                                ]
+                            }
+                        ],
+                        "confidence": 0.903,
+                        "spans": [
+                            {
+                                "offset": 1829,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "106-3834\n366\n2\n6x5ml/Bx\n565.00\n1130.00\nLIQUICHEK SPCLTY IMMUN CT LEVLIII",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2874,
+                            6.5444,
+                            8.1791,
+                            6.5512,
+                            8.1789,
+                            6.8293,
+                            0.2872,
+                            6.8226
+                        ]
+                    }
+                ],
+                "confidence": 0.907,
+                "spans": [
+                    {
+                        "offset": 1805,
+                        "length": 72
+                    }
+                ],
+                "material": "366",
+                "materialai": [
+                    {
+                        "id": "16006898",
+                        "score": 0.3173852813852814,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "16006898",
+                            "materialDescription": "D-10Dx CT MOUNT",
+                            "materialStatus": "",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    },
+                    {
+                        "id": "16005041",
+                        "score": 0.310600364547733,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "16005041",
+                            "materialDescription": "Liquicheck PC AntiSSA Insert",
+                            "materialStatus": "Z2",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    },
+                    {
+                        "id": "16005042",
+                        "score": 0.310600364547733,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "16005042",
+                            "materialDescription": "Liquicheck PC AntiSSB Insert",
+                            "materialStatus": "Z2",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "LIQUICHEK SPCLTY IMMUN CT LEVLIII",
+                "material2": "366",
+                "material2ai": [
+                    {
+                        "id": "366",
+                        "score": 0.2626262626262626,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00105239",
+                            "material": "366",
+                            "materialDescription": "SPECIALTY IA LIQ 3 6X5ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "132518610171262"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 226,
+                            "currencyCode": "USD"
+                        },
+                        "content": "226.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7235,
+                                    6.9929,
+                                    8.179,
+                                    6.9949,
+                                    8.179,
+                                    7.1082,
+                                    7.7234,
+                                    7.1082
+                                ]
+                            }
+                        ],
+                        "confidence": 0.903,
+                        "spans": [
+                            {
+                                "offset": 1906,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "MULTIQUAL ASSAY LEV 1 3ML",
+                        "content": "MULTIQUAL ASSAY LEV 1 3ML",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1354,
+                                    7.1495,
+                                    3.0326,
+                                    7.1421,
+                                    3.0331,
+                                    7.2595,
+                                    1.1359,
+                                    7.2669
+                                ]
+                            }
+                        ],
+                        "confidence": 0.888,
+                        "spans": [
+                            {
+                                "offset": 1913,
+                                "length": 25
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "110-4592",
+                        "content": "110-4592",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2872,
+                                    6.9952,
+                                    0.8896,
+                                    6.9953,
+                                    0.8893,
+                                    7.109,
+                                    0.2876,
+                                    7.1089
+                                ]
+                            }
+                        ],
+                        "confidence": 0.883,
+                        "spans": [
+                            {
+                                "offset": 1878,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6604,
+                                    7.0011,
+                                    4.7396,
+                                    7.0014,
+                                    4.7391,
+                                    7.1021,
+                                    4.6594,
+                                    7.1023
+                                ]
+                            }
+                        ],
+                        "confidence": 0.852,
+                        "spans": [
+                            {
+                                "offset": 1891,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 113,
+                            "currencyCode": "USD"
+                        },
+                        "content": "113.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6058,
+                                    6.9959,
+                                    7.0612,
+                                    6.9966,
+                                    7.0612,
+                                    7.1089,
+                                    6.606,
+                                    7.1102
+                                ]
+                            }
+                        ],
+                        "confidence": 0.901,
+                        "spans": [
+                            {
+                                "offset": 1899,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "110-4592\n694\n2\n12/Bx\n113.00\n226.00\nMULTIQUAL ASSAY LEV 1 3ML",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2872,
+                            6.9952,
+                            8.179,
+                            6.99,
+                            8.1792,
+                            7.2607,
+                            0.2874,
+                            7.2659
+                        ]
+                    }
+                ],
+                "confidence": 0.913,
+                "spans": [
+                    {
+                        "offset": 1878,
+                        "length": 60
+                    }
+                ],
+                "material": "694",
+                "materialai": [
+                    {
+                        "id": "5812-00",
+                        "score": 0.37689655172413794,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "5812-00",
+                            "materialDescription": "CTN VISTA MULTIQUAL 1 UNASSAY",
+                            "materialStatus": "Z9",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    },
+                    {
+                        "id": "3062BL",
+                        "score": 0.3063666666666667,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00014178",
+                            "material": "3062BL",
+                            "materialDescription": "JAP SYSMEX DATA-TROL 1 LIQ L/V",
+                            "materialStatus": "",
+                            "materialType": "Z005",
+                            "productHierarchy": "111717410311198"
+                        }
+                    },
+                    {
+                        "id": "5814-00",
+                        "score": 0.29763409961685827,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "5814-00",
+                            "materialDescription": "CTN VISTA MULTIQUAL 3 UNASSAY",
+                            "materialStatus": "Z9",
+                            "materialType": "Z011",
+                            "productHierarchy": ""
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "MULTIQUAL ASSAY LEV 1 3ML",
+                "material2": "694",
+                "material2ai": [
+                    {
+                        "id": "694",
+                        "score": 0.5841333333333334,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00105279",
+                            "material": "694",
+                            "materialDescription": "MULTIQUAL ASSAYED 1 LIQ 12X3ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "111718310171274"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 226,
+                            "currencyCode": "USD"
+                        },
+                        "content": "226.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7224,
+                                    7.442,
+                                    8.179,
+                                    7.4435,
+                                    8.179,
+                                    7.5566,
+                                    7.7226,
+                                    7.5566
+                                ]
+                            }
+                        ],
+                        "confidence": 0.902,
+                        "spans": [
+                            {
+                                "offset": 1967,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "MULTIQUAL ASSAY LEV 3 3ML",
+                        "content": "MULTIQUAL ASSAY LEV 3 3ML",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1347,
+                                    7.5901,
+                                    3.0326,
+                                    7.5848,
+                                    3.0329,
+                                    7.7043,
+                                    1.135,
+                                    7.7096
+                                ]
+                            }
+                        ],
+                        "confidence": 0.886,
+                        "spans": [
+                            {
+                                "offset": 1974,
+                                "length": 25
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "110-3980",
+                        "content": "110-3980",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2882,
+                                    7.4448,
+                                    0.891,
+                                    7.4459,
+                                    0.891,
+                                    7.5557,
+                                    0.2884,
+                                    7.5564
+                                ]
+                            }
+                        ],
+                        "confidence": 0.874,
+                        "spans": [
+                            {
+                                "offset": 1939,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6594,
+                                    7.4499,
+                                    4.7425,
+                                    7.4507,
+                                    4.7425,
+                                    7.5502,
+                                    4.6588,
+                                    7.5496
+                                ]
+                            }
+                        ],
+                        "confidence": 0.717,
+                        "spans": [
+                            {
+                                "offset": 1952,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 113,
+                            "currencyCode": "USD"
+                        },
+                        "content": "113.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6058,
+                                    7.4445,
+                                    7.0612,
+                                    7.4454,
+                                    7.0612,
+                                    7.555,
+                                    6.6063,
+                                    7.5561
+                                ]
+                            }
+                        ],
+                        "confidence": 0.9,
+                        "spans": [
+                            {
+                                "offset": 1960,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "110-3980\n696\n2\n12/Bx\n113.00\n226.00\nMULTIQUAL ASSAY LEV 3 3ML",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2882,
+                            7.4448,
+                            8.179,
+                            7.4362,
+                            8.1793,
+                            7.7007,
+                            0.2885,
+                            7.7093
+                        ]
+                    }
+                ],
+                "confidence": 0.912,
+                "spans": [
+                    {
+                        "offset": 1939,
+                        "length": 60
+                    }
+                ],
+                "material": "696",
+                "materialai": [
+                    {
+                        "id": "12022871",
+                        "score": 0.31699797979797983,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "12022871",
+                            "materialDescription": "3 TIER STEEL TABLE",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "14221251045483A"
+                        }
+                    },
+                    {
+                        "id": "1653313",
+                        "score": 0.2895904761904762,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00023977",
+                            "material": "1653313",
+                            "materialDescription": "Mini-PROTEAN 3 Casting Stand",
+                            "materialStatus": "",
+                            "materialType": "Z004",
+                            "productHierarchy": "23502871292465A"
+                        }
+                    },
+                    {
+                        "id": "12004908",
+                        "score": 0.2878238310708899,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00111092",
+                            "material": "12004908",
+                            "materialDescription": "Monocle Block 3 Template Daughter Plate",
+                            "materialStatus": "",
+                            "materialType": "Z005",
+                            "productHierarchy": "23543161547350A"
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "MULTIQUAL ASSAY LEV 3 3ML",
+                "material2": "696",
+                "material2ai": [
+                    {
+                        "id": "696",
+                        "score": 0.5568333333333333,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00105281",
+                            "material": "696",
+                            "materialDescription": "MULTIQUAL ASSAYED 3 LIQ 12X3ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "111718310171274"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 540,
+                            "currencyCode": "USD"
+                        },
+                        "content": "540.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7253,
+                                    7.886,
+                                    8.179,
+                                    7.8869,
+                                    8.179,
+                                    7.9984,
+                                    7.7255,
+                                    7.9987
+                                ]
+                            }
+                        ],
+                        "confidence": 0.903,
+                        "spans": [
+                            {
+                                "offset": 2028,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "LYPHOCHEK IMMUN CONTROL + 12X1ML",
+                        "content": "LYPHOCHEK IMMUN CONTROL + 12X1ML",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1399,
+                                    8.0376,
+                                    3.5628,
+                                    8.0334,
+                                    3.563,
+                                    8.1506,
+                                    1.1401,
+                                    8.1548
+                                ]
+                            }
+                        ],
+                        "confidence": 0.895,
+                        "spans": [
+                            {
+                                "offset": 2035,
+                                "length": 32
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "122-2904",
+                        "content": "122-2904",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2887,
+                                    7.8874,
+                                    0.891,
+                                    7.889,
+                                    0.891,
+                                    7.9983,
+                                    0.289,
+                                    7.9978
+                                ]
+                            }
+                        ],
+                        "confidence": 0.856,
+                        "spans": [
+                            {
+                                "offset": 2000,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6606,
+                                    7.8938,
+                                    4.742,
+                                    7.8948,
+                                    4.7418,
+                                    7.9905,
+                                    4.6599,
+                                    7.9897
+                                ]
+                            }
+                        ],
+                        "confidence": 0.681,
+                        "spans": [
+                            {
+                                "offset": 2013,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 270,
+                            "currencyCode": "USD"
+                        },
+                        "content": "270.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6043,
+                                    7.8862,
+                                    7.0612,
+                                    7.8863,
+                                    7.0612,
+                                    7.9973,
+                                    6.6046,
+                                    7.9986
+                                ]
+                            }
+                        ],
+                        "confidence": 0.902,
+                        "spans": [
+                            {
+                                "offset": 2021,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "122-2904\n430\n2\n12/Bx\n270.00\n540.00\nLYPHOCHEK IMMUN CONTROL + 12X1ML",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2887,
+                            7.8811,
+                            8.1791,
+                            7.8863,
+                            8.1789,
+                            8.1562,
+                            0.2885,
+                            8.151
+                        ]
+                    }
+                ],
+                "confidence": 0.912,
+                "spans": [
+                    {
+                        "offset": 2000,
+                        "length": 67
+                    }
+                ],
+                "material": "430",
+                "materialai": [
+                    {
+                        "id": "12006819",
+                        "score": 0.33409722222222216,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "12006819",
+                            "materialDescription": "LC control",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "11951361585032A"
+                        }
+                    },
+                    {
+                        "id": "C01270",
+                        "score": 0.32320075757575756,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "C01270",
+                            "materialDescription": "IG1 CONTROL",
+                            "materialStatus": "",
+                            "materialType": "Z010",
+                            "productHierarchy": "265930514311898"
+                        }
+                    },
+                    {
+                        "id": "009925",
+                        "score": 0.3105456349206349,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00106456",
+                            "material": "009925",
+                            "materialDescription": "ID-Internal Quality Control 1x1 Set",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "14721651564917A"
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "LYPHOCHEK IMMUN CONTROL + 12X1ML",
+                "material2": "430",
+                "material2ai": [
+                    {
+                        "id": "430",
+                        "score": 0.3348232323232323,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00105246",
+                            "material": "430",
+                            "materialDescription": "IMMUNOLOGY PLUS BI LYPH 12X1ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "132518110171291"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 506,
+                            "currencyCode": "USD"
+                        },
+                        "content": "506.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7264,
+                                    8.3298,
+                                    8.179,
+                                    8.3308,
+                                    8.179,
+                                    8.4403,
+                                    7.7266,
+                                    8.4403
+                                ]
+                            }
+                        ],
+                        "confidence": 0.902,
+                        "spans": [
+                            {
+                                "offset": 2095,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "CARDIAC MARKER PLUS LEV 1 3ML",
+                        "content": "CARDIAC MARKER PLUS LEV 1 3ML",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.141,
+                                    8.4834,
+                                    3.3369,
+                                    8.4778,
+                                    3.3372,
+                                    8.5931,
+                                    1.1413,
+                                    8.5987
+                                ]
+                            }
+                        ],
+                        "confidence": 0.887,
+                        "spans": [
+                            {
+                                "offset": 2102,
+                                "length": 29
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "110-7090",
+                        "content": "110-7090",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2874,
+                                    8.3318,
+                                    0.891,
+                                    8.3313,
+                                    0.891,
+                                    8.4401,
+                                    0.2878,
+                                    8.4413
+                                ]
+                            }
+                        ],
+                        "confidence": 0.866,
+                        "spans": [
+                            {
+                                "offset": 2068,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.6623,
+                                    8.3379,
+                                    4.737,
+                                    8.3384,
+                                    4.737,
+                                    8.4335,
+                                    4.6617,
+                                    8.4336
+                                ]
+                            }
+                        ],
+                        "confidence": 0.719,
+                        "spans": [
+                            {
+                                "offset": 2081,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 253,
+                            "currencyCode": "USD"
+                        },
+                        "content": "253.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.6056,
+                                    8.3303,
+                                    7.0612,
+                                    8.3313,
+                                    7.0612,
+                                    8.4396,
+                                    6.6058,
+                                    8.4402
+                                ]
+                            }
+                        ],
+                        "confidence": 0.901,
+                        "spans": [
+                            {
+                                "offset": 2088,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "110-7090\n181\n2\n6/Kt\n253.00\n506.00\nCARDIAC MARKER PLUS LEV 1 3ML",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2874,
+                            8.3311,
+                            8.179,
+                            8.3297,
+                            8.179,
+                            8.5946,
+                            0.2874,
+                            8.5959
+                        ]
+                    }
+                ],
+                "confidence": 0.912,
+                "spans": [
+                    {
+                        "offset": 2068,
+                        "length": 63
+                    }
+                ],
+                "material": "181",
+                "materialai": [
+                    {
+                        "id": "12004909",
+                        "score": 0.3137472522480019,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00111090",
+                            "material": "12004909",
+                            "materialDescription": "Monocle Block 1 Template Daughter Plate",
+                            "materialStatus": "",
+                            "materialType": "Z005",
+                            "productHierarchy": "23543161547350A"
+                        }
+                    },
+                    {
+                        "id": "20009069",
+                        "score": 0.301168371858027,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "20009069",
+                            "materialDescription": "CAPTIVE FASTENER PLATE RV ELEVATOR DOOR",
+                            "materialStatus": "Z2",
+                            "materialType": "Z002",
+                            "productHierarchy": ""
+                        }
+                    },
+                    {
+                        "id": "9109018",
+                        "score": 0.29882531261841605,
+                        "values": [],
+                        "metadata": {
+                            "bom": "",
+                            "material": "9109018",
+                            "materialDescription": "CIRCULAR LEVEL",
+                            "materialStatus": "",
+                            "materialType": "Z002",
+                            "productHierarchy": "265930514311898"
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "CARDIAC MARKER PLUS LEV 1 3ML",
+                "material2": "181",
+                "material2ai": [
+                    {
+                        "id": "181",
+                        "score": 0.4957173860622136,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00000083",
+                            "material": "181",
+                            "materialDescription": "CARD MKRS PLUS 1 LIQ 6X3ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "131517310171228"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "object",
+                "valueObject": {
+                    "Amount": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 506,
+                            "currencyCode": "USD"
+                        },
+                        "content": "506.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    7.7288,
+                                    8.7723,
+                                    8.179,
+                                    8.7734,
+                                    8.179,
+                                    8.8844,
+                                    7.7286,
+                                    8.8832
+                                ]
+                            }
+                        ],
+                        "confidence": 0.901,
+                        "spans": [
+                            {
+                                "offset": 2159,
+                                "length": 6
+                            }
+                        ]
+                    },
+                    "Description": {
+                        "type": "string",
+                        "valueString": "CARDIAC MARKER PLUS LV3 3ML",
+                        "content": "CARDIAC MARKER PLUS LV3 3ML",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    1.1413,
+                                    8.9238,
+                                    3.1875,
+                                    8.9198,
+                                    3.1877,
+                                    9.0362,
+                                    1.1415,
+                                    9.0402
+                                ]
+                            }
+                        ],
+                        "confidence": 0.887,
+                        "spans": [
+                            {
+                                "offset": 2166,
+                                "length": 27
+                            }
+                        ]
+                    },
+                    "ProductCode": {
+                        "type": "string",
+                        "valueString": "108-7816",
+                        "content": "108-7816",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    0.2875,
+                                    8.7729,
+                                    0.8965,
+                                    8.7727,
+                                    0.8965,
+                                    8.8839,
+                                    0.2877,
+                                    8.8853
+                                ]
+                            }
+                        ],
+                        "confidence": 0.874,
+                        "spans": [
+                            {
+                                "offset": 2132,
+                                "length": 8
+                            }
+                        ]
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "valueNumber": 2,
+                        "content": "2",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    4.661,
+                                    8.7794,
+                                    4.737,
+                                    8.7804,
+                                    4.737,
+                                    8.8771,
+                                    4.6602,
+                                    8.8767
+                                ]
+                            }
+                        ],
+                        "confidence": 0.719,
+                        "spans": [
+                            {
+                                "offset": 2145,
+                                "length": 1
+                            }
+                        ]
+                    },
+                    "UnitPrice": {
+                        "type": "currency",
+                        "valueCurrency": {
+                            "amount": 253,
+                            "currencyCode": "USD"
+                        },
+                        "content": "253.00",
+                        "boundingRegions": [
+                            {
+                                "pageNumber": 1,
+                                "polygon": [
+                                    6.606,
+                                    8.7741,
+                                    7.0612,
+                                    8.7743,
+                                    7.0612,
+                                    8.8836,
+                                    6.606,
+                                    8.884
+                                ]
+                            }
+                        ],
+                        "confidence": 0.901,
+                        "spans": [
+                            {
+                                "offset": 2152,
+                                "length": 6
+                            }
+                        ]
+                    }
+                },
+                "content": "108-7816\n183\n2\n6/Kt\n253.00\n506.00\nCARDIAC MARKER PLUS LV3 3ML",
+                "boundingRegions": [
+                    {
+                        "pageNumber": 1,
+                        "polygon": [
+                            0.2875,
+                            8.7729,
+                            8.179,
+                            8.7651,
+                            8.1793,
+                            9.0317,
+                            0.2878,
+                            9.0394
+                        ]
+                    }
+                ],
+                "confidence": 0.913,
+                "spans": [
+                    {
+                        "offset": 2132,
+                        "length": 61
+                    }
+                ],
+                "material": "183",
+                "materialai": [
+                    {
+                        "id": "108-7816",
+                        "score": 0,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00021613",
+                            "material": "108-7816",
+                            "materialDescription": "ANA SPECKLED LIQ 3X0.5ML",
+                            "materialStatus": "",
+                            "materialType": "Z005",
+                            "productHierarchy": "131117110171213"
+                        }
+                    }
+                ],
+                "batch": "",
+                "productName": "CARDIAC MARKER PLUS LV3 3ML",
+                "material2": "183",
+                "material2ai": [
+                    {
+                        "id": "108-7816",
+                        "score": 0.2940972222222222,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00021613",
+                            "material": "108-7816",
+                            "materialDescription": "ANA SPECKLED LIQ 3X0.5ML",
+                            "materialStatus": "",
+                            "materialType": "Z005",
+                            "productHierarchy": "131117110171213"
+                        }
+                    },
+                    {
+                        "id": "183",
+                        "score": 0.41753357753357756,
+                        "values": [],
+                        "metadata": {
+                            "bom": "00000085",
+                            "material": "183",
+                            "materialDescription": "CARD MKRS PLUS 3 LIQ 6X3ML",
+                            "materialStatus": "",
+                            "materialType": "Z003",
+                            "productHierarchy": "131517310171228"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "PurchaseOrder": {
+        "content": "AI_47321_23082537",
+        "valueString": "AI_47321_23082537"
+    },
+    "ShippingAddress": {
+        "type": "address",
+        "content": "145 Pinelawn Rd Ste 150N\nMelville, NY 11747-7104\nUS",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    3.9939,
+                    1.8873,
+                    5.6169,
+                    1.8873,
+                    5.6169,
+                    2.317,
+                    3.9939,
+                    2.317
+                ]
+            }
+        ],
+        "confidence": 0.865,
+        "spans": [
+            {
+                "offset": 523,
+                "length": 24
+            },
+            {
+                "offset": 584,
+                "length": 26
+            }
+        ],
+        "valueAddress": {
+            "houseNumber": "145",
+            "road": "Pinelawn Rd",
+            "postalCode": "11747-7104",
+            "city": "Melville",
+            "state": "NY",
+            "countryRegion": "US",
+            "streetAddress": "145 Pinelawn Rd Ste 150N",
+            "unit": "Ste 150N"
+        }
+    },
+    "ShippingAddressRecipient": {
+        "type": "string",
+        "valueString": "Vantage Medical Associates\nBarr Medical Lab",
+        "content": "Vantage Medical Associates\nBarr Medical Lab",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    3.9938,
+                    1.7758,
+                    5.7437,
+                    1.7752,
+                    5.7438,
+                    2.0979,
+                    3.9939,
+                    2.0985
+                ]
+            }
+        ],
+        "confidence": 0.884,
+        "spans": [
+            {
+                "offset": 451,
+                "length": 26
+            },
+            {
+                "offset": 548,
+                "length": 16
+            }
+        ]
+    },
+    "VendorAddress": {
+        "type": "address",
+        "content": "135 Duryea Road . Melville, NY 11747",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    0.2303,
+                    0.9313,
+                    2.3076,
+                    0.9283,
+                    2.3078,
+                    1.0623,
+                    0.2305,
+                    1.0654
+                ]
+            }
+        ],
+        "confidence": 0.855,
+        "spans": [
+            {
+                "offset": 140,
+                "length": 36
+            }
+        ],
+        "valueAddress": {
+            "houseNumber": "135",
+            "road": "Duryea Road",
+            "postalCode": "11747",
+            "city": "Melville",
+            "state": "NY",
+            "streetAddress": "135 Duryea Road"
+        }
+    },
+    "VendorAddressRecipient": {
+        "type": "string",
+        "valueString": "HENRY SCHEIN®",
+        "content": "HENRY SCHEIN®",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    0.365,
+                    0.4705,
+                    2.3858,
+                    0.4767,
+                    2.3851,
+                    0.7175,
+                    0.3643,
+                    0.7113
+                ]
+            }
+        ],
+        "confidence": 0.684,
+        "spans": [
+            {
+                "offset": 0,
+                "length": 13
+            }
+        ]
+    },
+    "VendorName": {
+        "type": "string",
+        "valueString": "HENRY SCHEIN®",
+        "content": "HENRY SCHEIN®",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    0.365,
+                    0.4705,
+                    2.3858,
+                    0.4767,
+                    2.3851,
+                    0.7175,
+                    0.3643,
+                    0.7113
+                ]
+            }
+        ],
+        "confidence": 0.684,
+        "spans": [
+            {
+                "offset": 0,
+                "length": 13
+            }
+        ]
+    },
+    "VendorPhoneNumber": {
+        "type": "phoneNumber",
+        "valuePhoneNumber": "+18004724346",
+        "content": "1.800.472.4346",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    0.2405,
+                    1.078,
+                    1.1344,
+                    1.0774,
+                    1.1344,
+                    1.1922,
+                    0.2411,
+                    1.193
+                ]
+            }
+        ],
+        "confidence": 0.93,
+        "spans": [
+            {
+                "offset": 243,
+                "length": 14
+            }
+        ]
+    },
+    "ContractNo": {
+        "type": "string",
+        "valueString": "1004808",
+        "content": "1004808",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    1.0987,
+                    1.7662,
+                    1.5605,
+                    1.7652,
+                    1.5605,
+                    1.8678,
+                    1.0985,
+                    1.8691
+                ]
+            }
+        ],
+        "confidence": 0.71,
+        "spans": [
+            {
+                "offset": 443,
+                "length": 7
+            }
+        ]
+    },
+    "OrderNumber": {
+        "type": "string",
+        "valueString": "23082537",
+        "content": "23082537",
+        "boundingRegions": [
+            {
+                "pageNumber": 1,
+                "polygon": [
+                    6.9365,
+                    0.5303,
+                    7.5316,
+                    0.529,
+                    7.5316,
+                    0.6441,
+                    6.9362,
+                    0.6448
+                ]
+            }
+        ],
+        "confidence": 0.547,
+        "spans": [
+            {
+                "offset": 64,
+                "length": 8
+            }
+        ]
+    },
+    "Purchase_Order": {
+        "type": "string",
+        "confidence": 0
+    },
+    "AIAccountManager": {
+        "value": {
+            "name": "",
+            "email": "",
+            "phone_direct": "",
+            "phone_mobile": ""
+        }
+    },
+    "AIConsigneeContact": {
+        "value": {
+            "name": "",
+            "email": "",
+            "phone_direct": "516 885-8307",
+            "phone_mobile": ""
+        }
+    },
+    "AIShipToContact": {
+        "value": {
+            "name": "",
+            "email": "",
+            "phone_direct": "",
+            "phone_mobile": ""
+        }
+    },
+    "AIMaterials": {
+        "value": [
+            {
+                "index": 0,
+                "materialNumbers": [
+                    "776-2235"
+                ],
+                "productName": "immunoassay plus ctrl l1 5ml"
+            },
+            {
+                "index": 1,
+                "materialNumbers": [
+                    "104-2771"
+                ],
+                "productName": "immunoassay plus ctrl l3 5ml"
+            },
+            {
+                "index": 2,
+                "materialNumbers": [
+                    "122-3662"
+                ],
+                "productName": "lyphochek immun spec cntr level 1"
+            },
+            {
+                "index": 3,
+                "materialNumbers": [
+                    "122-3665"
+                ],
+                "productName": "lyphochek immun spec cntr level 3"
+            },
+            {
+                "index": 4,
+                "materialNumbers": [
+                    "106-3832"
+                ],
+                "productName": "liquichek spclty immun ct level i"
+            },
+            {
+                "index": 5,
+                "materialNumbers": [
+                    "106-3834"
+                ],
+                "productName": "liquichek spclty immun ct levliii"
+            },
+            {
+                "index": 6,
+                "materialNumbers": [
+                    "110-4592"
+                ],
+                "productName": "multiqual assay lev 1 3ml"
+            },
+            {
+                "index": 7,
+                "materialNumbers": [
+                    "110-3980"
+                ],
+                "productName": "multiqual assay lev 3 3ml"
+            },
+            {
+                "index": 8,
+                "materialNumbers": [
+                    "122-2904"
+                ],
+                "productName": "lyphochek immun control + 12x1ml"
+            },
+            {
+                "index": 9,
+                "materialNumbers": [
+                    "110-7090"
+                ],
+                "productName": "cardiac marker plus lev 1 3ml"
+            },
+            {
+                "index": 10,
+                "materialNumbers": [
+                    "108-7816"
+                ],
+                "productName": "cardiac marker plus lv3 3ml"
+            }
+        ]
+    },
+    "AIBatchNumbers": {
+        "value": []
+    },
+    "AIAddressArray": {
+        "value": [
+            "145 pinelawn rd ste 150n barr medical lab melville, ny 11747-7104 us",
+            "520 south rock blvd reno, nv 89502-4112"
+        ]
+    },
+    "AICurrencyCode": {
+        "value": "usd"
+    },
+    "AISoldTo": {
+        "value": {
+            "name": "henry schein®",
+            "address": "520 south rock blvd, reno, nv 89502-4112",
+            "address_english": "520 south rock blvd, reno, nv 89502-4112",
+            "address_reason": "selected from the purchase order billing address block; the header indicates henry schein® is the ordering company.",
+            "address_street": "520 south rock blvd",
+            "address_city": "reno",
+            "address_postal_code": "89502-4112",
+            "address_country_code": "us",
+            "translatedName": "henry schein®",
+            "translatedAddress": "520 south rock blvd, reno, nv 89502-4112",
+            "number": {
+                "name": "henry schein inc",
+                "score": 0.977410853,
+                "customer": 1004808,
+                "international": false,
+                "similarity": 935
+            }
+        }
+    },
+    "AIShipTo": {
+        "value": {
+            "name": "vantage medical associates",
+            "address": "145 pinelawn rd ste 150n barr medical lab, melville, ny 11747-7104, us",
+            "address_english": "145 pinelawn rd ste 150n barr medical lab, melville, ny 11747-7104, us",
+            "address_reason": "extracted from the explicit ship to line by separating the company name from the physical address.",
+            "address_street": "145 pinelawn rd ste 150n barr medical lab",
+            "address_city": "melville",
+            "address_postal_code": "11747-7104",
+            "address_country_code": "us",
+            "translatedName": "vantage medical associates",
+            "translatedAddress": "145 pinelawn rd ste 150n barr medical lab, melville, ny 11747-7104, us",
+            "number": {
+                "name": "vantage medical associates",
+                "score": 0.813722193,
+                "customer": 2127378,
+                "international": false,
+                "similarity": 1000
+            }
+        }
+    },
+    "AIConsignee": {
+        "value": {
+            "name": "vantage medical associates",
+            "address": "145 pinelawn rd ste 150n barr medical lab, melville, ny 11747-7104, us",
+            "address_english": "145 pinelawn rd ste 150n barr medical lab, melville, ny 11747-7104, us",
+            "address_reason": "no separate consignee provided; using the ship to details.",
+            "address_street": "145 pinelawn rd ste 150n barr medical lab",
+            "address_city": "melville",
+            "address_postal_code": "11747-7104",
+            "address_country_code": "us",
+            "translatedName": "vantage medical associates",
+            "translatedAddress": "145 pinelawn rd ste 150n barr medical lab, melville, ny 11747-7104, us",
+            "number": {
+                "name": "vantage medical associates",
+                "score": 0.813722193,
+                "customer": 2127378,
+                "international": false,
+                "similarity": 1000
+            }
+        }
+    },
+    "AISoldToAddressCustomer": {
+        "value": 1004808
+    },
+    "AIShipToAddressCustomer": {
+        "value": 2127378
+    },
+    "AIConsigneeAddressCustomer": {
+        "value": 2127378
+    },
+    "AIVariation": {
+        "value": "CF-o3-mini-hi-ADDR-o3-mini-hi"
+    },
+    "ConfidenceAvg": {
+        "value": "94.7"
+    },
+    "Email": {
+        "CreatedOn": "2025-04-04T00:00:00.000Z",
+        "EmailId": "",
+        "Subject": "",
+        "From": "",
+        "To": [],
+        "Cc": [],
+        "Body": "",
+        "Attachments": [
+            {
+                "AttachmentName": "ABC.PDF",
+                "key": "/uploads/1743724800000/ABC.PDF"
+            }
+        ]
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:ZOTC_0003_GET_ORDER_DETAILS xmlns:ns0="urn:sap-com:document:sap:rfc:functions">
+<IM_SALES_ORDER>1001347787</IM_SALES_ORDER>
+</ns0:ZOTC_0003_GET_ORDER_DETAILS>

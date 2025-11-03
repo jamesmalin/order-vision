@@ -1,0 +1,82 @@
+name: Deploy to Dev - AWS Lambda
+
+on:
+  push:
+    branches:
+      - dev
+      - staging
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ (github.ref == 'refs/heads/dev' && 'dev') || (github.ref == 'refs/heads/staging' && 'staging') || (github.ref == 'refs/heads/master' && 'master') }}
+    env:
+      Environment: ${{ (github.ref == 'refs/heads/dev' && 'dev') || (github.ref == 'refs/heads/staging' && 'staging') || (github.ref == 'refs/heads/master' && 'master') }}
+      IAMRole: ${{ (github.ref == 'refs/heads/dev' && 'arn:aws:iam::614250372661:role/azureAIFormRecognizer-role-si50w7x1') || 
+        (github.ref == 'refs/heads/staging' && 'arn:aws:iam::367995044692:role/azureAIFormRecognizer-role-si50w7x1') || 
+        (github.ref == 'refs/heads/master' && 'arn:aws:iam::954366782091:role/azureAIFormRecognizer-role-si50w7x1') }}
+      IAMUser: ${{ (github.ref == 'refs/heads/dev' && 'arn:aws:iam::614250372661:user/GIT-Emerging-Tech-CI-CD') || 
+        (github.ref == 'refs/heads/staging' && 'arn:aws:iam::367995044692:user/GIT-Emerging-Tech-CI-CD') || 
+        (github.ref == 'refs/heads/master' && 'arn:aws:iam::954366782091:user/GIT-Emerging-Tech-CI-CD') }} 
+      ZipFileName: eskerAI
+      ZipFiles: "index.mjs node_modules"
+      S3BucketPrefix: git-emerging-tech-ci-cd-deploy-
+      LambdaFunctionName: esker-ai
+      LambdaFunctionHandler: index.handler
+      LambdaRegion: us-east-2
+      DeploymentID: ${{ github.run_id }}
+      AWS: true
+      AZURE: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install # @azure/ai-form-recognizer pdf-lib dot-env openai @aws-sdk/client-secrets-manager
+      
+      - name: Zip Lambda Function
+        run: zip -r9 ${{ env.ZipFileName }}.zip $ZipFiles
+      
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_LAMBDA_REGION }}
+
+      - name: Upload to S3
+        run: aws s3 cp ${{ env.ZipFileName }}.zip s3://${{ env.S3BucketPrefix }}${{ env.Environment }}/${{ env.ZipFileName }}-${{ env.DeploymentID }}.zip
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_LAMBDA_REGION }}
+
+      - name: Deploy code to Lambda using CloudFormation
+        run: |
+          aws cloudformation deploy \
+            --template-file cloudformation.yml \
+            --stack-name $LambdaFunctionName \
+            --region $LambdaRegion \
+            --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
+            --parameter-overrides \
+            S3BucketParam=${{ env.S3BucketPrefix }}${{ env.Environment }} \
+            S3Key=${{ env.ZipFileName }}-${{ env.DeploymentID }}.zip \
+            IAMRoleParam=$IAMRole \
+            IAMUserParam=$IAMUser \
+            DeploymentIdParam=${{ env.DeploymentID }} \
+            LambdaFunctionNameParam=$LambdaFunctionName \
+            LambdaFunctionHandlerParam=$LambdaFunctionHandler
+
+      - name: Update Lambda environment variables
+        run: |
+          # Update Lambda environment variables using AWS CLI
+          aws lambda update-function-configuration \
+            --function-name $LambdaFunctionName \
+            --region $LambdaRegion \
+            --environment "Variables={
+              AZURE_INVOICE_PARSER_ENDPOINT=${{ secrets.AZURE_INVOICE_PARSER_ENDPOINT }},
+              AWS_LAMBDA_REGION=${{ secrets.AWS_LAMBDA_REGION }},
+              AWS=${{ env.AWS }},
+              AZURE=${{ env.AZURE }}
+            }"

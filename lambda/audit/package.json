@@ -1,0 +1,23 @@
+{
+  "name": "order-vision-audit",
+  "version": "1.0.0",
+  "description": "Lambda function to search S3 uploads by email metadata",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "s3",
+    "audit",
+    "search"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.709.0",
+    "dotenv": "^16.4.7"
+  }
+}

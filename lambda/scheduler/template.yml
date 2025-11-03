@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template to create EventBridge Scheduler for order-vision-upload-check lambda'
+
+Parameters:
+  RoleArn:
+    Type: String
+    Description: 'IAM Role ARN for the EventBridge Scheduler to assume'
+    Default: 'arn:aws:iam::614250372661:role/service-role/order-vision-upload-role-hv9lejlk'
+
+Resources:
+  UploadCheckSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      Description: 'Schedule to run order-vision-upload-check lambda every 2 minutes'
+      FlexibleTimeWindow:
+        Mode: "OFF"
+      GroupName: 'default'
+      Name: order-vision-upload-check-schedule
+      ScheduleExpression: 'rate(2 minutes)'
+      Target:
+        Arn: !Sub 'arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:order-vision-upload-check'
+        RoleArn: !Ref RoleArn
+        RetryPolicy:
+          MaximumRetryAttempts: 3
+      State: ENABLED

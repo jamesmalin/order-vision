@@ -1,0 +1,15 @@
+{
+    "name": "cloudwatch-alerts",
+    "version": "1.0.0",
+    "description": "CloudWatch alerts lambda function for posting to Microsoft Teams and logging metrics",
+    "main": "index.mjs",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@aws-sdk/client-cloudwatch": "^3.893.0"
+    }
+}
