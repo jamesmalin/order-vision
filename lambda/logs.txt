@@ -1,0 +1,871 @@
+
+=== Checking Lambda Logs and S3 Files ===
+Mode: All (last 100 uploads in last 72 hours)
+AWS Profile: bio-rad-prod
+Region: us-east-2
+S3 Bucket: order-vision-ai-prod
+
+
+=== Checking S3 Uploads ===
+
+Found 90 uploads in the last 72 hours
+
+Checking 1763083267000 (2025-11-14T01:21:07.000Z)...
+  📧 Subject: Fw: purchase order
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO26-1082 Bio-rad (combs).pdf
+       s3://order-vision-ai-prod/uploads/1763083267000/PO26-1082 Bio-rad (combs).pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763083137000 (2025-11-14T01:18:57.000Z)...
+  📧 Subject: Fw: Document Purchase Order 201900005133
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO_201900005133_0.pdf
+       s3://order-vision-ai-prod/uploads/1763083137000/PO_201900005133_0.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763082091000 (2025-11-14T01:01:31.000Z)...
+  📧 Subject: N/A
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 伯乐订单（019）.pdf
+       s3://order-vision-ai-prod/uploads/1763082091000/伯乐订单（019）.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763078504000 (2025-11-14T00:01:44.000Z)...
+  📧 Subject: Fw: Queensland Health Purchase Order: 4305141381
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - MailPdf20251113 070709.pdf
+       s3://order-vision-ai-prod/uploads/1763078504000/MailPdf20251113 070709.pdf
+     - Queensland Health Purchase Order 4305141381.PDF
+       s3://order-vision-ai-prod/uploads/1763078504000/Queensland Health Purchase Order 4305141381.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763078301000 (2025-11-13T23:58:21.000Z)...
+  📧 Subject: Fw: Document Purchase Order LFB471005
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO_LFB471005_0.pdf
+       s3://order-vision-ai-prod/uploads/1763078301000/PO_LFB471005_0.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763063367000 (2025-11-13T19:49:27.000Z)...
+  📧 Subject: HEMOPE - 25
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 25.pdf
+       s3://order-vision-ai-prod/uploads/1763063367000/25.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763061949000 (2025-11-13T19:25:49.000Z)...
+  📧 Subject: PC 026099 - BIORAD / NOV.25 - RODRIGUEZ RJ
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PC 026099 - Formulario Pedido Order Vision - RJ.pdf
+       s3://order-vision-ai-prod/uploads/1763061949000/PC 026099 - Formulario Pedido Order Vision - RJ.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763060562000 (2025-11-13T19:02:42.000Z)...
+  📧 Subject: Unimed Governador Valadares - 77846
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 77846.pdf
+       s3://order-vision-ai-prod/uploads/1763060562000/77846.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763059421000 (2025-11-13T18:43:41.000Z)...
+  📧 Subject: Pedido Asso benef canoas
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - nicole.pdf
+       s3://order-vision-ai-prod/uploads/1763059421000/nicole.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763058333000 (2025-11-13T18:25:33.000Z)...
+  📧 Subject: Hemope - 75
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 75.pdf
+       s3://order-vision-ai-prod/uploads/1763058333000/75.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763057973000 (2025-11-13T18:19:33.000Z)...
+  📧 Subject: HMTJ 22.12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HMTJ.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1763057973000/HMTJ.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763051440000 (2025-11-13T16:30:40.000Z)...
+  📧 Subject: SESMA - 14300
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 14300.pdf
+       s3://order-vision-ai-prod/uploads/1763051440000/14300.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763042458000 (2025-11-13T14:00:58.000Z)...
+  📧 Subject: Hospital Santo Amaro FJS - 391833
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 391833.pdf
+       s3://order-vision-ai-prod/uploads/1763042458000/391833.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763041798000 (2025-11-13T13:49:58.000Z)...
+  📧 Subject: PEDIDOS BLOQUEADOS
+  ⚠️  No Purchase Order found in classification
+  📎 Attachments:
+     - MailPdf20251113 085618.pdf (Type: Customer Inquiry)
+       s3://order-vision-ai-prod/uploads/1763041798000/MailPdf20251113 085618.pdf
+  ❌ Missing processed.json
+  ⚠️  processing.txt still present (may be in progress)
+
+Checking 1763035827000 (2025-11-13T12:10:27.000Z)...
+  📧 Subject: Pedido HCPA
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HCPA.pdf
+       s3://order-vision-ai-prod/uploads/1763035827000/HCPA.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763033078000 (2025-11-13T11:24:38.000Z)...
+  📧 Subject: Pedido  Fahece
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - hemosc.pdf
+       s3://order-vision-ai-prod/uploads/1763033078000/hemosc.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763033063000 (2025-11-13T11:24:23.000Z)...
+  📧 Subject: UNIMED CRICIUMA 372654 REENVIO
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - UNIMED.CRICIUIMA.372654.pdf
+       s3://order-vision-ai-prod/uploads/1763033063000/UNIMED.CRICIUIMA.372654.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763032996000 (2025-11-13T11:23:16.000Z)...
+  📧 Subject: PEDIDO CORNELIO PROCOPIO - 22.12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - CORNELIO.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1763032996000/CORNELIO.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763021509000 (2025-11-13T08:11:49.000Z)...
+  📧 Subject: N/A
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - BRW25-15TJHY-QSD.pdf
+       s3://order-vision-ai-prod/uploads/1763021509000/BRW25-15TJHY-QSD.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763021285000 (2025-11-13T08:08:05.000Z)...
+  📧 Subject: Fw: PO25-279 FSD; PO25-283; PO25-284
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO25-284.pdf
+       s3://order-vision-ai-prod/uploads/1763021285000/PO25-284.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763021271000 (2025-11-13T08:07:51.000Z)...
+  📧 Subject: Fw: PO25-279 FSD; PO25-283; PO25-284
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO25-283.pdf
+       s3://order-vision-ai-prod/uploads/1763021271000/PO25-283.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763021257000 (2025-11-13T08:07:37.000Z)...
+  📧 Subject: Fw: PO25-279 FSD; PO25-283; PO25-284
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO25-279 FSD.pdf
+       s3://order-vision-ai-prod/uploads/1763021257000/PO25-279 FSD.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763020129000 (2025-11-13T07:48:49.000Z)...
+  📧 Subject: Fw: ALPS Pte. Ltd. sent a new Purchase Order 7571029504
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 7571029504.pdf
+       s3://order-vision-ai-prod/uploads/1763020129000/7571029504.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763020038000 (2025-11-13T07:47:18.000Z)...
+  📧 Subject: Fw: ALPS Pte. Ltd. sent a new Purchase Order 4630053279
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 4630053279.pdf
+       s3://order-vision-ai-prod/uploads/1763020038000/4630053279.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763011111000 (2025-11-13T05:18:31.000Z)...
+  📧 Subject: 转发: Shanghai Biologics-5100282287-伯乐生命医学产品(上海)有限公司
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - C020-5100282287.PDF
+       s3://order-vision-ai-prod/uploads/1763011111000/C020-5100282287.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763008869000 (2025-11-13T04:41:09.000Z)...
+  📧 Subject: Fw: National University of Singapore sent a new Purchase Order 8000236459
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 8000236459.pdf
+       s3://order-vision-ai-prod/uploads/1763008869000/8000236459.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763001523000 (2025-11-13T02:38:43.000Z)...
+  📧 Subject: N/A
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - BRW25-17SXQY (1).pdf
+       s3://order-vision-ai-prod/uploads/1763001523000/BRW25-17SXQY (1).pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763001486000 (2025-11-13T02:38:06.000Z)...
+  📧 Subject: N/A
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 西安莱伯质控订单-20251112.pdf
+       s3://order-vision-ai-prod/uploads/1763001486000/西安莱伯质控订单-20251112.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1763001467000 (2025-11-13T02:37:47.000Z)...
+  📧 Subject: N/A
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 西安莱伯质控订单-20251111.pdf
+       s3://order-vision-ai-prod/uploads/1763001467000/西安莱伯质控订单-20251111.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762999247000 (2025-11-13T02:00:47.000Z)...
+  📧 Subject: 转发: [手动发送]上海药明康德订单-25084791-(L)伯乐生命医学产品（上海）有限公司-2025-11-12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 03020-上海药明康德新药开发有限公司-25084791-伯乐生命医学产品（上海）有限公司.pdf
+       s3://order-vision-ai-prod/uploads/1762999247000/03020-上海药明康德新药开发有限公司-25084791-伯乐生命医学产品（上海）有限公司.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762995641000 (2025-11-13T01:00:41.000Z)...
+  📧 Subject: Fw: Queensland Health Purchase Order: 4305138780
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - MailPdf20251112 080303.pdf
+       s3://order-vision-ai-prod/uploads/1762995641000/MailPdf20251112 080303.pdf
+     - Queensland Health Purchase Order 4305138780.PDF
+       s3://order-vision-ai-prod/uploads/1762995641000/Queensland Health Purchase Order 4305138780.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762976699000 (2025-11-12T19:44:59.000Z)...
+  📧 Subject: Hospital São Francisco - 147524
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 147524.pdf
+       s3://order-vision-ai-prod/uploads/1762976699000/147524.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762976662000 (2025-11-12T19:44:22.000Z)...
+  📧 Subject: LOACEM  - 376
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 376.pdf
+       s3://order-vision-ai-prod/uploads/1762976662000/376.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762972587000 (2025-11-12T18:36:27.000Z)...
+  📧 Subject: Pedido 695 - VERITAS SOLUCOES DIAGNOSTICAS LTDA
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - Formulario Pedido de Venda IA Order Vision - VERITASv2 _ PEDIDO 695.pdf
+       s3://order-vision-ai-prod/uploads/1762972587000/Formulario Pedido de Venda IA Order Vision - VERITASv2 _ PEDIDO 695.pdf
+     - MailPdf20251112 014018.pdf
+       s3://order-vision-ai-prod/uploads/1762972587000/MailPdf20251112 014018.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762972566000 (2025-11-12T18:36:06.000Z)...
+  📧 Subject: ENC: PEDIDO HINSG - 22.12 - REENVIO 
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HINSG.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762972566000/HINSG.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762972116000 (2025-11-12T18:28:36.000Z)...
+  📧 Subject: ANCHIETA 22.12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - ANCHIETA.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762972116000/ANCHIETA.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762971846000 (2025-11-12T18:24:06.000Z)...
+  📧 Subject: CRER 3624 REEENVIO
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - CRER.22.12.3624.pdf
+       s3://order-vision-ai-prod/uploads/1762971846000/CRER.22.12.3624.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762971659000 (2025-11-12T18:20:59.000Z)...
+  📧 Subject: AMPARO 4253 REENVIO
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - AMPARO 4253.pdf
+       s3://order-vision-ai-prod/uploads/1762971659000/AMPARO 4253.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762966242000 (2025-11-12T16:50:42.000Z)...
+  📧 Subject: Pedido Soc Sulina Divina Providencia
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - divina.pdf
+       s3://order-vision-ai-prod/uploads/1762966242000/divina.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762953951000 (2025-11-12T13:25:51.000Z)...
+  📧 Subject: Pedido HSVP
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - hsvp.pdf
+       s3://order-vision-ai-prod/uploads/1762953951000/hsvp.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762952734000 (2025-11-12T13:05:34.000Z)...
+  📧 Subject: Fw: Biorad - New Order 100005099 (Spareparts)
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - BMS.SER100005099.Biorad.pdf
+       s3://order-vision-ai-prod/uploads/1762952734000/BMS.SER100005099.Biorad.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762952724000 (2025-11-12T13:05:24.000Z)...
+  📧 Subject: Fw: Biorad - New Order 800006446
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - BMS.ADM800006446.Biorad.pdf
+       s3://order-vision-ai-prod/uploads/1762952724000/BMS.ADM800006446.Biorad.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762950432000 (2025-11-12T12:27:12.000Z)...
+  📧 Subject: HEMOPE - 78-2025
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 78-2025.pdf
+       s3://order-vision-ai-prod/uploads/1762950432000/78-2025.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762950121000 (2025-11-12T12:22:01.000Z)...
+  📧 Subject: HEMOPE - 77-2025
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 77-2025.pdf
+       s3://order-vision-ai-prod/uploads/1762950121000/77-2025.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762947254000 (2025-11-12T11:34:14.000Z)...
+  📧 Subject: PEDIDO HUCAM - 22.12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HUCAM.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762947254000/HUCAM.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762945674000 (2025-11-12T11:07:54.000Z)...
+  📧 Subject: BIOCOR 22.12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - BIOCOR.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762945674000/BIOCOR.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762944976000 (2025-11-12T10:56:16.000Z)...
+  📧 Subject: Pedido Fundação Univ Caxias
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - ucs.pdf
+       s3://order-vision-ai-prod/uploads/1762944976000/ucs.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762935729000 (2025-11-12T08:22:09.000Z)...
+  📧 Subject: Fw: Eurofins Food Testing Singapore Pte. Ltd. Purchase Order #SG0055036331
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO-SG0055036331_v1_20251112.pdf
+       s3://order-vision-ai-prod/uploads/1762935729000/PO-SG0055036331_v1_20251112.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762932556000 (2025-11-12T07:29:16.000Z)...
+  📧 Subject: Fw: *Urgent* cuvettes
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - Purchase Order PO0490.pdf
+       s3://order-vision-ai-prod/uploads/1762932556000/Purchase Order PO0490.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762932451000 (2025-11-12T07:27:31.000Z)...
+  📧 Subject: Fw: ALPS Pte. Ltd. sent a new Purchase Order 4630053246
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 4630053246.pdf
+       s3://order-vision-ai-prod/uploads/1762932451000/4630053246.pdf
+     - MailPdf20251112 022849.pdf
+       s3://order-vision-ai-prod/uploads/1762932451000/MailPdf20251112 022849.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762931872000 (2025-11-12T07:17:52.000Z)...
+  📧 Subject: Fw: Order for URINALYSIS BI LIQ - November 2025
+  ⚠️  No Purchase Order found in classification
+  📎 Attachments:
+     - BIO-RAD.pdf (Type: Quote)
+       s3://order-vision-ai-prod/uploads/1762931872000/BIO-RAD.pdf
+     - MailPdf20251112 022812.pdf (Type: Supporting Document)
+       s3://order-vision-ai-prod/uploads/1762931872000/MailPdf20251112 022812.pdf
+  ❌ Missing processed.json
+  ⚠️  processing.txt still present (may be in progress)
+
+Checking 1762927085000 (2025-11-12T05:58:05.000Z)...
+  📧 Subject: 转发: Shanghai Biologics-5100281990-伯乐生命医学产品(上海)有限公司
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - C020-5100281990.PDF
+       s3://order-vision-ai-prod/uploads/1762927085000/C020-5100281990.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762927020000 (2025-11-12T05:57:00.000Z)...
+  📧 Subject: 转发: Shanghai Biologics-5300037166-伯乐生命医学产品(上海)有限公司
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - C020-5300037166.PDF
+       s3://order-vision-ai-prod/uploads/1762927020000/C020-5300037166.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762926480000 (2025-11-12T05:48:00.000Z)...
+  📧 Subject: Fw: National University of Singapore sent a new Purchase Order 8000236069
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 8000236069.pdf
+       s3://order-vision-ai-prod/uploads/1762926480000/8000236069.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762918128000 (2025-11-12T03:28:48.000Z)...
+  📧 Subject: Fw: National University of Singapore sent a new Purchase Order 8000235983
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 8000235983.pdf
+       s3://order-vision-ai-prod/uploads/1762918128000/8000235983.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762910463000 (2025-11-12T01:21:03.000Z)...
+  📧 Subject: 转发: Shanghai Biologics-5300037158-伯乐生命医学产品(上海)有限公司
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - C020-5300037158.PDF
+       s3://order-vision-ai-prod/uploads/1762910463000/C020-5300037158.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762910376000 (2025-11-12T01:19:36.000Z)...
+  📧 Subject: 转发: [手动发送]苏州药明康德订单-25026130-(L)伯乐生命医学产品（上海）有限公司-2025-11-11
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 03040-苏州药明康德新药开发有限公司-25026130-伯乐生命医学产品（上海）有限公司.pdf
+       s3://order-vision-ai-prod/uploads/1762910376000/03040-苏州药明康德新药开发有限公司-25026130-伯乐生命医学产品（上海）有限公司.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762893767000 (2025-11-11T20:42:47.000Z)...
+  📧 Subject: SARAH Salvador - 4500648922
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 4500648922.pdf
+       s3://order-vision-ai-prod/uploads/1762893767000/4500648922.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762893166000 (2025-11-11T20:32:46.000Z)...
+  📧 Subject: Santa Casa De Poços de Caldas - 16224
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 16224.pdf
+       s3://order-vision-ai-prod/uploads/1762893166000/16224.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762893011000 (2025-11-11T20:30:11.000Z)...
+  📧 Subject: ASCOMCER  - 19583
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 19583.pdf
+       s3://order-vision-ai-prod/uploads/1762893011000/19583.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762887080000 (2025-11-11T18:51:20.000Z)...
+  📧 Subject: ASSOC. PELOTENSE 22/12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PELOTENSE.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762887080000/PELOTENSE.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762886467000 (2025-11-11T18:41:07.000Z)...
+  📧 Subject: Pedido Assoc cong sta catarina
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - STA ISABEL.pdf
+       s3://order-vision-ai-prod/uploads/1762886467000/STA ISABEL.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762885861000 (2025-11-11T18:31:01.000Z)...
+  📧 Subject: Santa Casa de Barbacena - 10112025
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 10112025.pdf
+       s3://order-vision-ai-prod/uploads/1762885861000/10112025.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762883077000 (2025-11-11T17:44:37.000Z)...
+  📧 Subject: SANTA CASA DE MIS. DE PORTO ALEGRE 22.12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - STA.CASA.POA.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762883077000/STA.CASA.POA.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762880501000 (2025-11-11T17:01:41.000Z)...
+  📧 Subject: AGIR/HUGOL
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HUGOL.22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762880501000/HUGOL.22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762869131000 (2025-11-11T13:52:11.000Z)...
+  📧 Subject: PEDIDO GHC
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - GHC.pdf
+       s3://order-vision-ai-prod/uploads/1762869131000/GHC.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762863645000 (2025-11-11T12:20:45.000Z)...
+  📧 Subject: PEDIDO SANTA MARIA
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - STA MARIA.pdf
+       s3://order-vision-ai-prod/uploads/1762863645000/STA MARIA.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762862542000 (2025-11-11T12:02:22.000Z)...
+  📧 Subject: CRER 22/12 - 3624
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - CRER.22.12.3624.pdf
+       s3://order-vision-ai-prod/uploads/1762862542000/CRER.22.12.3624.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762861265000 (2025-11-11T11:41:05.000Z)...
+  📧 Subject: PEDIDO HCPA 4
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HCPA 4.pdf
+       s3://order-vision-ai-prod/uploads/1762861265000/HCPA 4.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762860961000 (2025-11-11T11:36:01.000Z)...
+  📧 Subject: Hospital São Francisco - 80126
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 80126.pdf
+       s3://order-vision-ai-prod/uploads/1762860961000/80126.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762860947000 (2025-11-11T11:35:47.000Z)...
+  📧 Subject: PEDIDO HCPA 3
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HCPA 3.pdf
+       s3://order-vision-ai-prod/uploads/1762860947000/HCPA 3.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762860557000 (2025-11-11T11:29:17.000Z)...
+  📧 Subject: PEDIDO HCPA 2
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HCPA 2.pdf
+       s3://order-vision-ai-prod/uploads/1762860557000/HCPA 2.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762860375000 (2025-11-11T11:26:15.000Z)...
+  📧 Subject: MERIDIONAL 4114 - 22/12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - MERIDIONAL22.12.4114.pdf
+       s3://order-vision-ai-prod/uploads/1762860375000/MERIDIONAL22.12.4114.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762859360000 (2025-11-11T11:09:20.000Z)...
+  📧 Subject: MERIDIONAL 22/12
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - MERIDIONAL22.12.pdf
+       s3://order-vision-ai-prod/uploads/1762859360000/MERIDIONAL22.12.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762859215000 (2025-11-11T11:06:55.000Z)...
+  📧 Subject: PEDIDO HCPA 1
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - HCPA 1.pdf
+       s3://order-vision-ai-prod/uploads/1762859215000/HCPA 1.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762857469000 (2025-11-11T10:37:49.000Z)...
+  📧 Subject: Pedido Ihel
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - IHEL.pdf
+       s3://order-vision-ai-prod/uploads/1762857469000/IHEL.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762853121000 (2025-11-11T09:25:21.000Z)...
+  📧 Subject: Fw: Request for Quotation
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - PO_ArrowBiome-A259.pdf
+       s3://order-vision-ai-prod/uploads/1762853121000/PO_ArrowBiome-A259.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762852764000 (2025-11-11T09:19:24.000Z)...
+  📧 Subject: Fw: National University of Singapore sent a new Purchase Order 8000235714
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 8000235714.pdf
+       s3://order-vision-ai-prod/uploads/1762852764000/8000235714.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762845118000 (2025-11-11T07:11:58.000Z)...
+  📧 Subject: Fw: 北京微未来科技有限公司-BRW2511015WWL
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 北京微未来科技有限公司-BRW2511015WWL.pdf
+       s3://order-vision-ai-prod/uploads/1762845118000/北京微未来科技有限公司-BRW2511015WWL.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762844959000 (2025-11-11T07:09:19.000Z)...
+  📧 Subject: 转发: [手动发送]南通药明康德医药科技有限公司订单-25038752-(L)伯乐生命医学产品（上海）有限公司-2025-11-11
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 03120-南通药明康德医药科技有限公司-25038752-伯乐生命医学产品（上海）有限公司.pdf
+       s3://order-vision-ai-prod/uploads/1762844959000/03120-南通药明康德医药科技有限公司-25038752-伯乐生命医学产品（上海）有限公司.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762844689000 (2025-11-11T07:04:49.000Z)...
+  📧 Subject: 转发: [手动发送]上海药明康德订单-25084198-(L)伯乐生命医学产品（上海）有限公司-2025-11-11
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 03020-上海药明康德新药开发有限公司-25084198-伯乐生命医学产品（上海）有限公司.pdf
+       s3://order-vision-ai-prod/uploads/1762844689000/03020-上海药明康德新药开发有限公司-25084198-伯乐生命医学产品（上海）有限公司.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762844008000 (2025-11-11T06:53:28.000Z)...
+  📧 Subject: Fw: National University of Singapore sent a new Purchase Order 8000235653
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 8000235653.pdf
+       s3://order-vision-ai-prod/uploads/1762844008000/8000235653.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762842542000 (2025-11-11T06:29:02.000Z)...
+  📧 Subject: Fw: BIORAD/PO 2025BIORAD-114/ETA Noibai, Hanoi, Vietnam: 30/11/2025
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 2025BIORAD-114 (HN).pdf
+       s3://order-vision-ai-prod/uploads/1762842542000/2025BIORAD-114 (HN).pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762842523000 (2025-11-11T06:28:43.000Z)...
+  📧 Subject: N/A
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - BRW25-4SDLF单章.PDF
+       s3://order-vision-ai-prod/uploads/1762842523000/BRW25-4SDLF单章.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762842487000 (2025-11-11T06:28:07.000Z)...
+  📧 Subject: Fw: BIORAD/PO 2025BIORAD-115/ETA Tan Son Nhat, Ho Chi Minh, Vietnam: 30/11/2025
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 2025BIORAD-115 (HCM).pdf
+       s3://order-vision-ai-prod/uploads/1762842487000/2025BIORAD-115 (HCM).pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762842159000 (2025-11-11T06:22:39.000Z)...
+  📧 Subject: Fw: PMH // Purchase Order from the Hospital Authority (PO 5111030118)
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - XXPO_PRINT_352272105_1.PDF
+       s3://order-vision-ai-prod/uploads/1762842159000/XXPO_PRINT_352272105_1.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762842155000 (2025-11-11T06:22:35.000Z)...
+  📧 Subject: Fw: PMH // Purchase Order from the Hospital Authority (PO 5111030123)
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - XXPO_PRINT_352273004_1.PDF
+       s3://order-vision-ai-prod/uploads/1762842155000/XXPO_PRINT_352273004_1.PDF
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762839688000 (2025-11-11T05:41:28.000Z)...
+  📧 Subject: Fw: ALPS Pte. Ltd. sent a new Purchase Order 7573018735
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 7573018735.pdf
+       s3://order-vision-ai-prod/uploads/1762839688000/7573018735.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762828931000 (2025-11-11T02:42:11.000Z)...
+  📧 Subject: N/A
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - BWR25-08GZFH-QSD.pdf
+       s3://order-vision-ai-prod/uploads/1762828931000/BWR25-08GZFH-QSD.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+Checking 1762826531000 (2025-11-11T02:02:11.000Z)...
+  📧 Subject: Fw: National University of Singapore sent a new Purchase Order 8000235452
+  ✅ Classification found with Purchase Order
+  📎 Purchase Order(s):
+     - 8000235452.pdf
+       s3://order-vision-ai-prod/uploads/1762826531000/8000235452.pdf
+  ✅ processed.json found
+  ✅ processing.txt removed (completed)
+
+
+=== Checking CloudWatch Logs ===
+
+Checking order-vision-upload...
+  ✅ No errors found
+Checking order-vision-upload-check...
+  ✅ No errors found
+Checking order-vision-classification...
+  ✅ No errors found
+Checking order-vision-start-processing...
+  ✅ No errors found
+
+================================================================================
+=== Summary ===
+
+S3 File Issues:
+  Missing classification.json: 0
+  Missing processed.json: 2
+    - 1763041798000 (2025-11-13T13:49:58.000Z)
+    - 1762931872000 (2025-11-12T07:17:52.000Z)
+  No Purchase Order in classification: 2
+    - 1763041798000 (2025-11-13T13:49:58.000Z)
+      Subject: PEDIDOS BLOQUEADOS
+      Attachments:
+        • MailPdf20251113 085618.pdf (Type: Customer Inquiry)
+          s3://order-vision-ai-prod/uploads/1763041798000/MailPdf20251113 085618.pdf
+    - 1762931872000 (2025-11-12T07:17:52.000Z)
+      Subject: Fw: Order for URINALYSIS BI LIQ - November 2025
+      Attachments:
+        • BIO-RAD.pdf (Type: Quote)
+          s3://order-vision-ai-prod/uploads/1762931872000/BIO-RAD.pdf
+        • MailPdf20251112 022812.pdf (Type: Supporting Document)
+          s3://order-vision-ai-prod/uploads/1762931872000/MailPdf20251112 022812.pdf
+
+CloudWatch Errors: 0
+
+⚠️  4 total issue(s) detected! Review details above.
+================================================================================
+

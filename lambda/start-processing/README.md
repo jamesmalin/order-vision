@@ -26,6 +26,7 @@ CUSTOM_FIELDS_MODEL=o3-mini-test-2,\
 ADDRESS_MODEL=o3-mini-test,\
 AWS_LAMBDA_REGION=us-east-2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://invoicew2-dev.cognitiveservices.azure.com/,\
+LIBPOSTAL_ENDPOINT=10.243.1.209,\
 AWS=true}" \
     --profile bio-rad-dev
 ```
@@ -63,6 +64,7 @@ CUSTOM_FIELDS_MODEL=o3-mini-test-2,\
 ADDRESS_MODEL=o3-mini-test,\
 AWS_LAMBDA_REGION=us-east-2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://invoicew2-dev.cognitiveservices.azure.com/,\
+LIBPOSTAL_ENDPOINT=10.243.1.209,\
 TRACKING_QUEUE_URL=https://sqs.us-east-2.amazonaws.com/614250372661/order-vision-tracking-queue-dev,\
 AWS=true}" \
     --profile bio-rad-dev
@@ -90,6 +92,7 @@ CUSTOM_FIELDS_MODEL=o3-mini-test-2,\
 ADDRESS_MODEL=o3-mini-test,\
 AWS_LAMBDA_REGION=us-east-2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://invoicew2-dev.cognitiveservices.azure.com/,\
+LIBPOSTAL_ENDPOINT=10.240.56.109,\
 AWS=true}" \
     --profile bio-rad-qa
 ```
@@ -126,6 +129,7 @@ CUSTOM_FIELDS_MODEL=o3-mini-test-2,\
 ADDRESS_MODEL=o3-mini-test,\
 AWS_LAMBDA_REGION=us-east-2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://invoicew2-dev.cognitiveservices.azure.com/,\
+LIBPOSTAL_ENDPOINT=10.240.56.109,\
 AWS=true}" \
     --profile bio-rad-qa
 ```
@@ -152,6 +156,7 @@ CUSTOM_FIELDS_MODEL=o3-mini-2,\
 ADDRESS_MODEL=o3-mini,\
 AWS_LAMBDA_REGION=us-east-2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://order-vision.cognitiveservices.azure.com/,\
+LIBPOSTAL_ENDPOINT=10.246.1.26,\
 AWS=true}" \
     --profile bio-rad-prod
 ```
@@ -187,6 +192,7 @@ CUSTOM_FIELDS_MODEL=o3-mini-2,\
 ADDRESS_MODEL=o3-mini,\
 AWS_LAMBDA_REGION=us-east-2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://order-vision.cognitiveservices.azure.com/,\
+LIBPOSTAL_ENDPOINT=10.246.1.26,\
 AWS=true}" \
     --profile bio-rad-prod
 ```

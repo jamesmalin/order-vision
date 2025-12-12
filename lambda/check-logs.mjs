@@ -62,7 +62,7 @@ Examples:
   node check-logs.mjs --mode count --limit 10 --profile bio-rad-prod
   
   # Check last 20 uploads in last 72 hours (default for all mode)
-  node check-logs.mjs --mode all --profile bio-rad-prod
+  node check-logs.mjs --mode all --profile bio-rad-prod --limit 100
   
   # Check last 50 uploads in last 48 hours
   node check-logs.mjs --mode all --limit 50 --hours 48 --profile bio-rad-prod

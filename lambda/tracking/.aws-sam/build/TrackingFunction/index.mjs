@@ -94,7 +94,15 @@ async function processTrackingEvent(event) {
   };
 
   // Add optional fields if present
-  if (metadata) trackingRecord.metadata = metadata;
+  if (metadata) {
+    trackingRecord.metadata = metadata;
+    
+    // Flatten key metadata fields for easier querying
+    if (metadata.from) trackingRecord.from = metadata.from;
+    if (metadata.subject) trackingRecord.subject = metadata.subject;
+    if (metadata.emailId) trackingRecord.emailId = metadata.emailId;
+    if (metadata.CreatedOn) trackingRecord.createdOn = metadata.CreatedOn;
+  }
   if (attachments) trackingRecord.attachments = attachments;
   if (error_details) trackingRecord.error_details = error_details;
   if (processing_duration) trackingRecord.processing_duration = processing_duration;

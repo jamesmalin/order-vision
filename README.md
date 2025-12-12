@@ -44,7 +44,7 @@ See `lambda/audit/README.md` for full documentation.
 
 search last 10 for file prod:
 ```bash
-TARGET="Ltd_UQ745786-CPQ25_Endorsed"
+TARGET="4305138780"
 for d in $(aws s3 ls s3://order-vision-ai-prod/uploads/ --profile bio-rad-prod \
            | awk '/^ *PRE/ {gsub("/","",$2); print $2}' \
            | sort -nr | head -30); do
@@ -56,12 +56,12 @@ done
 
 if found:
 ```bash
-aws s3 ls s3://order-vision-ai-prod/uploads/1759987419000/ --profile bio-rad-prod
+aws s3 ls s3://order-vision-ai-prod/uploads/1763078504000/ --profile bio-rad-prod
 ```
 
 dev:
 ```bash
-TARGET="XXPO"
+TARGET="SoldTo"
 for d in $(aws s3 ls s3://order-vision-ai-dev/uploads/ --profile bio-rad-dev \
            | awk '/^ *PRE/ {gsub("/","",$2); print $2}' \
            | sort -nr | head -30); do
@@ -71,7 +71,7 @@ for d in $(aws s3 ls s3://order-vision-ai-dev/uploads/ --profile bio-rad-dev \
 done
 ```
 
-aws s3 ls s3://order-vision-ai-dev/uploads/1759266538000/ --profile bio-rad-dev
+aws s3 ls s3://order-vision-ai-dev/uploads/1735275702000/ --profile bio-rad-dev
 
 qa:
 ```bash

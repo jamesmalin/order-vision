@@ -46,6 +46,8 @@ const s3Client = new S3Client({ region: REGION });
 const lambdaClient = new LambdaClient({ region: REGION });
 const Azure = process.env.AZURE === 'true';
 
+const libPostalEndpoint = process.env.LIBPOSTAL_ENDPOINT || '10.243.1.209';
+
 // Function to send alert to CloudWatch alerts Lambda using direct Lambda invocation
 async function sendAlert(alertData) {
   const environment = process.env.ENVIRONMENT || 'Development';
@@ -525,7 +527,7 @@ async function getParsedAddress(oneLineAddress) {
             title_case: true
         }; // parser, expandparser
 
-        const response = await axios.post('http://34.219.176.221/expandparser', request, {
+        const response = await axios.post(`http://${libPostalEndpoint}/expandparser`, request, {
             headers: {
                 'accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -2237,14 +2239,26 @@ async function main(event, callback) {
         throw new Error(errorMsg);
     }
 
-    // Select the first attachment that has .Type of "Purchase Order"
+    // If currentPO is specified, use that specific PO; otherwise fall back to first PO
     let attachmentName;
-    const purchaseOrderAttachment = event.metadata.Attachments.find(attachment =>
-        attachment.Type === "Purchase Order"
-    );
+    let purchaseOrderAttachment;
+    if (event.currentPO) {
+        purchaseOrderAttachment = event.metadata.Attachments.find(attachment =>
+            attachment.Type === "Purchase Order" && attachment.AttachmentName === event.currentPO
+        );
+        console.log(`Processing specific PO: ${event.currentPO}`);
+    } else {
+        // Fallback to first PO for backward compatibility
+        purchaseOrderAttachment = event.metadata.Attachments.find(attachment =>
+            attachment.Type === "Purchase Order"
+        );
+        console.log(`Processing first PO found (backward compatibility mode)`);
+    }
 
     if (!purchaseOrderAttachment) {
-        const errorMsg = "No attachment with Type 'Purchase Order' found";
+        const errorMsg = event.currentPO 
+            ? `No attachment with Type 'Purchase Order' and name '${event.currentPO}' found`
+            : "No attachment with Type 'Purchase Order' found";
         await sendAlert({
             message: `Start processing failed: ${errorMsg}. Timestamp: ${event.timestamp || 'Unknown'}`
         });
@@ -3106,7 +3120,10 @@ async function main(event, callback) {
     // Write processed.json to S3
     // Write processed.json to S3
     if (event.timestamp) {
-        const processedFileKey = `uploads/${event.timestamp}/processed.json`;
+        // Generate unique filename for each PO to avoid conflicts
+        const sanitizedPOName = attachmentName.replace(/[^a-zA-Z0-9]/g, '_');
+        const processedFileKey = `uploads/${event.timestamp}/processed-${sanitizedPOName}.json`;
+        console.log(`Writing processed file: ${processedFileKey}`);
         invoice.Email = event.metadata;
         // Add base64 PDF content to each file in the attachments array
         if (invoice.Email?.Attachments) {

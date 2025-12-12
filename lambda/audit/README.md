@@ -214,9 +214,16 @@ Search for uploads with "Customer Quote Request" in the subject (last 10 uploads
 ```bash
 aws lambda invoke \
     --function-name order-vision-audit \
-    --payload '{"subject":"Customer Quote Request"}' \
-    --profile bio-rad-prod \
+    --payload '{"subject":"Shipto"}' \
+    --profile bio-rad-dev \
     response.json && cat response.json | jq
+
+aws lambda invoke \
+    --function-name order-vision-audit \
+    --payload file://lambda/audit/test-event.json \
+    --profile bio-rad-dev \
+    response.json && cat response.json | jq
+
 ```
 
 ## Search by Sender
@@ -226,7 +233,7 @@ Search for uploads from a specific sender:
 ```bash
 aws lambda invoke \
     --function-name order-vision-audit \
-    --payload '{"from":"edman_cheng@bio-rad.com","limit":20}' \
+    --payload '{"from":"iqbal_khan@bio-rad.com","limit":20}' \
     --profile bio-rad-dev \
     response.json && cat response.json | jq
 ```
@@ -238,7 +245,7 @@ Search for a specific quote number (e.g., 10000170911):
 ```bash
 aws lambda invoke \
     --function-name order-vision-audit \
-    --payload '{"subject":"10000170911","limit":30}' \
+    --payload '{"subject":"AU","limit":30}' \
     --profile bio-rad-prod \
     response.json && cat response.json | jq
 ```
@@ -265,6 +272,12 @@ aws lambda invoke \
     --payload '{"subject":"HCPA","from":"diasam.com.br","limit":50}' \
     --profile bio-rad-prod \
     response.json && cat response.json | jq
+
+aws lambda invoke \
+    --function-name order-vision-audit \
+    --payload '{"subject":"QU","limit":50}' \
+    --profile bio-rad-dev \
+    response.json && cat response.json | jq
 ```
 
 ## Search with Custom Limit
@@ -274,7 +287,7 @@ Search the last 50 uploads:
 ```bash
 aws lambda invoke \
     --function-name order-vision-audit \
-    --payload '{"subject":"Invoice","limit":50}' \
+    --payload '{"subject":"Queensland","limit":10}' \
     --profile bio-rad-qa \
     response.json && cat response.json | jq
 ```

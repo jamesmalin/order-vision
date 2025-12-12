@@ -25,8 +25,8 @@ const embeddingModel = 'text-embedding-3-small'; // text-embedding-3-small, text
 // const worksheetUniversal = workbook.Sheets[sheetNameUniversalAddress];
 
 // Load the Excel files
-const workbookKna1 = xlsx.readFile('prod_data/Customers-BR-IN-SG PROD 20250722/kna1 PROD_20250722_1135am.XLSX');
-const workbookUniversal = xlsx.readFile('prod_data/Customers-BR-IN-SG PROD 20250722/adrc PROD_20250722_1135am.XLSX');
+const workbookKna1 = xlsx.readFile('prod_data/AU NZ HK PROD Customers/kna1.XLSX');
+const workbookUniversal = xlsx.readFile('prod_data/AU NZ HK PROD Customers/adrc.XLSX');
 
 const sheetNameKna1 = 'kna1';
 const worksheetKna1 = workbookKna1.Sheets[sheetNameKna1];

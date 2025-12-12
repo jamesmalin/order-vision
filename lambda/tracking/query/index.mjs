@@ -1,5 +1,6 @@
-import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBClient, ScanCommand as RawScanCommand } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, QueryCommand, ScanCommand } from '@aws-sdk/lib-dynamodb';
+import { unmarshall, marshall } from '@aws-sdk/util-dynamodb';
 
 const REGION = process.env.AWS_REGION || 'us-east-2';
 const TRACKING_TABLE = process.env.TRACKING_TABLE;
@@ -49,6 +50,7 @@ function parseDateRange(startDate, endDate) {
 
 /**
  * Build filter expression for metadata searches
+ * Uses flattened top-level fields for reliable querying
  */
 function buildMetadataFilter(params) {
   const filterExpressions = [];
@@ -56,39 +58,35 @@ function buildMetadataFilter(params) {
   const expressionAttributeValues = {};
   let valueIndex = 0;
 
-  // Email ID filter
+  // Email ID filter (top-level field)
   if (params.emailId) {
     const valueKey = `:emailId${valueIndex++}`;
-    filterExpressions.push(`#metadata.#emailId = ${valueKey}`);
-    expressionAttributeNames['#metadata'] = 'metadata';
-    expressionAttributeNames['#emailId'] = 'EmailId';
+    filterExpressions.push(`#emailId = ${valueKey}`);
+    expressionAttributeNames['#emailId'] = 'emailId';
     expressionAttributeValues[valueKey] = params.emailId;
   }
 
-  // Subject filter (partial match)
+  // Subject filter (partial match on top-level field)
   if (params.subject) {
     const valueKey = `:subject${valueIndex++}`;
-    filterExpressions.push(`contains(#metadata.#subject, ${valueKey})`);
-    expressionAttributeNames['#metadata'] = 'metadata';
-    expressionAttributeNames['#subject'] = 'Subject';
+    filterExpressions.push(`contains(#subject, ${valueKey})`);
+    expressionAttributeNames['#subject'] = 'subject';
     expressionAttributeValues[valueKey] = params.subject;
   }
 
-  // From filter
+  // From filter (top-level field)
   if (params.from) {
     const valueKey = `:from${valueIndex++}`;
-    filterExpressions.push(`#metadata.#from = ${valueKey}`);
-    expressionAttributeNames['#metadata'] = 'metadata';
-    expressionAttributeNames['#from'] = 'From';
+    filterExpressions.push(`#from = ${valueKey}`);
+    expressionAttributeNames['#from'] = 'from';
     expressionAttributeValues[valueKey] = params.from;
   }
 
-  // CreatedOn filter (exact match)
+  // CreatedOn filter (exact match on top-level field)
   if (params.createdOn) {
     const valueKey = `:createdOn${valueIndex++}`;
-    filterExpressions.push(`#metadata.#createdOn = ${valueKey}`);
-    expressionAttributeNames['#metadata'] = 'metadata';
-    expressionAttributeNames['#createdOn'] = 'CreatedOn';
+    filterExpressions.push(`#createdOn = ${valueKey}`);
+    expressionAttributeNames['#createdOn'] = 'createdOn';
     expressionAttributeValues[valueKey] = params.createdOn;
   }
 
@@ -191,16 +189,24 @@ async function queryByStatus(status, dateRange = {}, additionalFilters = {}, lim
 
 /**
  * Scan table with filters (less efficient, use sparingly)
+ * Continues scanning until we have the requested number of matching results
+ * Uses post-processing for subject filter due to DocumentClient contains() limitations
  */
 async function scanWithFilters(filters, dateRange = {}, limit = 50) {
-  const params = {
-    TableName: TRACKING_TABLE,
-    Limit: limit
-  };
+  const allItems = [];
+  let lastEvaluatedKey = undefined;
+  let scannedCount = 0;
+  const maxScans = 50; // Scan up to 5000 items to find matches
+  let scanCount = 0;
 
   const filterExpressions = [];
   const expressionAttributeNames = {};
   const expressionAttributeValues = {};
+
+  // Store subject filter for post-processing
+  const subjectFilter = filters.subject;
+  const filtersWithoutSubject = { ...filters };
+  delete filtersWithoutSubject.subject;
 
   // Add date range filter
   if (dateRange.start || dateRange.end) {
@@ -220,22 +226,67 @@ async function scanWithFilters(filters, dateRange = {}, limit = 50) {
     }
   }
 
-  // Add metadata filters
-  const metadataFilter = buildMetadataFilter(filters);
+  // Add metadata filters (excluding subject for post-processing)
+  const metadataFilter = buildMetadataFilter(filtersWithoutSubject);
   if (metadataFilter.filterExpression) {
     filterExpressions.push(metadataFilter.filterExpression);
     Object.assign(expressionAttributeNames, metadataFilter.expressionAttributeNames);
     Object.assign(expressionAttributeValues, metadataFilter.expressionAttributeValues);
   }
 
-  if (filterExpressions.length > 0) {
-    params.FilterExpression = filterExpressions.join(' AND ');
-    params.ExpressionAttributeNames = expressionAttributeNames;
-    params.ExpressionAttributeValues = expressionAttributeValues;
-  }
+  // Keep scanning until we have enough matching results or run out of data
+  do {
+    const params = {
+      TableName: TRACKING_TABLE,
+      Limit: 100 // Scan 100 items at a time for efficiency
+    };
 
-  const command = new ScanCommand(params);
-  return await docClient.send(command);
+    if (filterExpressions.length > 0) {
+      params.FilterExpression = filterExpressions.join(' AND ');
+      params.ExpressionAttributeNames = expressionAttributeNames;
+      params.ExpressionAttributeValues = expressionAttributeValues;
+    }
+
+    if (lastEvaluatedKey) {
+      params.ExclusiveStartKey = lastEvaluatedKey;
+    }
+
+    const command = new ScanCommand(params);
+    const result = await docClient.send(command);
+
+    console.log(`Scan returned ${result.Items?.length || 0} items`);
+
+    if (result.Items && result.Items.length > 0) {
+      // Apply subject filter in post-processing if specified
+      let filteredItems = result.Items;
+      if (subjectFilter) {
+        console.log(`Applying subject filter: "${subjectFilter}"`);
+        filteredItems = result.Items.filter(item => {
+          const hasSubject = item.subject && item.subject.toLowerCase().includes(subjectFilter.toLowerCase());
+          if (hasSubject) {
+            console.log(`Match found: ${item.subject}`);
+          }
+          return hasSubject;
+        });
+        console.log(`After subject filter: ${filteredItems.length} items`);
+      }
+      
+      allItems.push(...filteredItems);
+    }
+
+    scannedCount += result.ScannedCount || 0;
+    lastEvaluatedKey = result.LastEvaluatedKey;
+    scanCount++;
+
+    // Continue if we don't have enough results yet and there's more data
+  } while (allItems.length < limit && lastEvaluatedKey && scanCount < maxScans);
+
+  // Return only the requested number of items
+  return {
+    Items: allItems.slice(0, limit),
+    ScannedCount: scannedCount,
+    LastEvaluatedKey: allItems.length >= limit ? lastEvaluatedKey : undefined
+  };
 }
 
 /**

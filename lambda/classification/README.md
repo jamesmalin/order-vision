@@ -25,6 +25,7 @@ VARIATION=CF-o3-mini-hi-ADDR-o3-mini-hi,\
 CUSTOM_FIELDS_MODEL=o3-mini-test-2,\
 ADDRESS_MODEL=o3-mini-test,\
 AWS_LAMBDA_REGION=us-east-2,\
+MAX_CONCURRENT_POS=2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://invoicew2-dev.cognitiveservices.azure.com/,\
 AWS=true}" \
     --profile bio-rad-dev
@@ -60,6 +61,7 @@ VARIATION=CF-o3-mini-hi-ADDR-o3-mini-hi,\
 CUSTOM_FIELDS_MODEL=o3-mini-test-2,\
 ADDRESS_MODEL=o3-mini-test,\
 AWS_LAMBDA_REGION=us-east-2,\
+MAX_CONCURRENT_POS=2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://invoicew2-dev.cognitiveservices.azure.com/,\
 TRACKING_QUEUE_URL=https://sqs.us-east-2.amazonaws.com/614250372661/order-vision-tracking-queue-dev,\
 AWS=true}" \
@@ -86,6 +88,7 @@ VARIATION=CF-o3-mini-hi-ADDR-o3-mini-hi,\
 CUSTOM_FIELDS_MODEL=o3-mini-test-2,\
 ADDRESS_MODEL=o3-mini-test,\
 AWS_LAMBDA_REGION=us-east-2,\
+MAX_CONCURRENT_POS=2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://invoicew2-dev.cognitiveservices.azure.com/,\
 AWS=true}" \
     --profile bio-rad-qa
@@ -127,6 +130,7 @@ VARIATION=CF-o3-mini-hi-ADDR-o3-mini-hi,\
 CUSTOM_FIELDS_MODEL=o3-mini-2,\
 ADDRESS_MODEL=o3-mini,\
 AWS_LAMBDA_REGION=us-east-2,\
+MAX_CONCURRENT_POS=2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://order-vision.cognitiveservices.azure.com/,\
 AWS=true}" \
     --profile bio-rad-prod
@@ -161,6 +165,7 @@ VARIATION=CF-o3-mini-hi-ADDR-o3-mini-hi,\
 CUSTOM_FIELDS_MODEL=o3-mini-2,\
 ADDRESS_MODEL=o3-mini,\
 AWS_LAMBDA_REGION=us-east-2,\
+MAX_CONCURRENT_POS=2,\
 AZURE_INVOICE_PARSER_ENDPOINT=https://order-vision.cognitiveservices.azure.com/,\
 AWS=true}" \
     --profile bio-rad-prod

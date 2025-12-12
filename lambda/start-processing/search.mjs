@@ -17,6 +17,8 @@ const model = 'text-embedding-3-small'; // text-embedding-3-small, text-embeddin
 const apiVersion = '2023-07-01-preview';
 // const openaiApiKey = process.env.AZURE_API_KEY2;
 
+const libPostalEndpoint = process.env.LIBPOSTAL_ENDPOINT || '10.243.1.209';
+
 // // Initialize OpenAI client for embedding generation
 // const openai = new OpenAI({
 //     apiKey: openaiApiKey,
@@ -62,7 +64,7 @@ async function getParsedAddress(oneLineAddress) {
             title_case: true
         };
 
-        const response = await axios.post('http://34.219.176.221/expandparser', request, {
+        const response = await axios.post(`http://${libPostalEndpoint}/expandparser`, request, {
             headers: {
                 'accept': 'application/json',
                 'Content-Type': 'application/json'

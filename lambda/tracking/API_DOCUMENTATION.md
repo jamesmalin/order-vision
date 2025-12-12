@@ -247,7 +247,7 @@ curl "https://rfw0q0k1l3.execute-api.us-east-2.amazonaws.com/dev/tracking/query?
 
 ### 6. Search by Sender Email
 ```bash
-curl "https://rfw0q0k1l3.execute-api.us-east-2.amazonaws.com/dev/tracking/query?from=james_malin@bio-rad.com"
+curl "https://rfw0q0k1l3.execute-api.us-east-2.amazonaws.com/dev/tracking/query?from=iqbal_khan@bio-rad.com"
 ```
 
 ### 7. Filter by Status

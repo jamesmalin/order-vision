@@ -399,17 +399,20 @@ async function main(event, callback) {
     }
 
     // Track classification completed
-    await trackClassificationCompleted(event.timestamp, event.metadata, event);
+    await trackClassificationCompleted(event.timestamp, event.metadata.Attachments, 0);
 
-    // Check if a purchase order was found
-    if (purchaseOrderAttachment) {
-        // Process purchase order
-        console.log(`Processing Purchase Order: ${purchaseOrderAttachment}`);
+    // Configuration for max concurrent PO processing
+    const MAX_CONCURRENT_POS = parseInt(process.env.MAX_CONCURRENT_POS || '2');
+
+    // Find ALL Purchase Order attachments
+    const purchaseOrderAttachments = event.metadata.Attachments.filter(
+        attachment => attachment.Type === "Purchase Order"
+    );
+
+    if (purchaseOrderAttachments.length > 0) {
+        console.log(`Found ${purchaseOrderAttachments.length} Purchase Order(s) - processing with max concurrency of ${MAX_CONCURRENT_POS}`);
         
-        // Track processing started
-        await trackProcessingStarted(event.timestamp, event.metadata);
-        
-        // Collect all RRC numbers from customer inquiry and supporting document attachments
+        // Collect RRC numbers once (shared across all POs)
         const allRrcNumbers = [];
         event.metadata.Attachments.forEach(attachment => {
             if ((attachment.Type === "Customer Inquiry" || attachment.Type === "Supporting Document") && attachment.RRC) {
@@ -417,40 +420,85 @@ async function main(event, callback) {
             }
         });
         
-        // Add RRC numbers to the event payload if any were found
-        if (allRrcNumbers.length > 0) {
-            // Deduplicate RRC numbers
-            const uniqueRrcNumbers = [...new Set(allRrcNumbers)];
-            event.RRC = uniqueRrcNumbers;
-            console.log(`Adding RRC numbers to purchase order processing: ${uniqueRrcNumbers.join(', ')}`);
+        const uniqueRrcNumbers = allRrcNumbers.length > 0 ? [...new Set(allRrcNumbers)] : [];
+        if (uniqueRrcNumbers.length > 0) {
+            console.log(`RRC numbers to be added to all POs: ${uniqueRrcNumbers.join(', ')}`);
         }
         
-        console.log(JSON.stringify(event));
-
-        // Invoke Lambda asynchronously with retry mechanism
-        const invokeCommand = new InvokeCommand({
-            FunctionName: LAMBDA_FUNCTION_NAME,
-            Payload: Buffer.from(JSON.stringify(event)),
-            InvocationType: 'Event'  // Async invocation
-        });
-        
-        const maxRetries = 3;
-        for (let attempt = 1; attempt <= maxRetries; attempt++) {
-            try {
-                const resp = await lambdaClient.send(invokeCommand);
-                console.log(`Async invoke succeeded on attempt ${attempt}`, resp);
-                break;
-            } catch (err) {
-                console.warn(`Invoke attempt ${attempt} failed:`, err);
-                if (attempt === maxRetries) {
-                    console.error('All retries failed');
-                    await sendAlert({
-                        message: `Classification failed: Unable to invoke ${LAMBDA_FUNCTION_NAME} after ${maxRetries} attempts. Timestamp: ${event.timestamp}, Error: ${err.message}`
-                    });
-                    throw err;
-                }
-                // optional: await new Promise(r => setTimeout(r, 100 * attempt));
+        // Helper function to invoke start-processing for a single PO
+        const invokePO = async (poAttachment) => {
+            console.log(`Invoking start-processing for PO: ${poAttachment.AttachmentName}`);
+            
+            // Track processing started for this specific PO
+            await trackProcessingStarted(event.timestamp, event.metadata);
+            
+            // Create event payload for this specific PO
+            const poEvent = {
+                ...event,
+                currentPO: poAttachment.AttachmentName
+            };
+            
+            // Add RRC numbers if any were found
+            if (uniqueRrcNumbers.length > 0) {
+                poEvent.RRC = uniqueRrcNumbers;
             }
+            
+            // Invoke Lambda asynchronously with retry mechanism
+            const invokeCommand = new InvokeCommand({
+                FunctionName: LAMBDA_FUNCTION_NAME,
+                Payload: Buffer.from(JSON.stringify(poEvent)),
+                InvocationType: 'Event'  // Async invocation
+            });
+            
+            const maxRetries = 3;
+            for (let attempt = 1; attempt <= maxRetries; attempt++) {
+                try {
+                    const resp = await lambdaClient.send(invokeCommand);
+                    console.log(`Async invoke succeeded for ${poAttachment.AttachmentName} on attempt ${attempt}`);
+                    return { success: true, po: poAttachment.AttachmentName };
+                } catch (err) {
+                    console.warn(`Invoke attempt ${attempt} failed for ${poAttachment.AttachmentName}:`, err);
+                    if (attempt === maxRetries) {
+                        console.error(`All retries failed for ${poAttachment.AttachmentName}`);
+                        await sendAlert({
+                            message: `Classification failed: Unable to invoke ${LAMBDA_FUNCTION_NAME} for PO ${poAttachment.AttachmentName} after ${maxRetries} attempts. Timestamp: ${event.timestamp}, Error: ${err.message}`
+                        });
+                        return { success: false, po: poAttachment.AttachmentName, error: err.message };
+                    }
+                }
+            }
+        };
+        
+        // Process POs in batches with controlled concurrency
+        const results = [];
+        for (let i = 0; i < purchaseOrderAttachments.length; i += MAX_CONCURRENT_POS) {
+            const batch = purchaseOrderAttachments.slice(i, i + MAX_CONCURRENT_POS);
+            console.log(`Processing batch ${Math.floor(i / MAX_CONCURRENT_POS) + 1}: ${batch.map(po => po.AttachmentName).join(', ')}`);
+            
+            const batchResults = await Promise.allSettled(
+                batch.map(po => invokePO(po))
+            );
+            
+            results.push(...batchResults);
+            
+            // Optional: Add a small delay between batches to further reduce API pressure
+            if (i + MAX_CONCURRENT_POS < purchaseOrderAttachments.length) {
+                console.log('Waiting 2 seconds before next batch...');
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+        }
+        
+        // Log results
+        const successful = results.filter(r => r.status === 'fulfilled' && r.value.success).length;
+        const failed = results.filter(r => r.status === 'rejected' || (r.status === 'fulfilled' && !r.value.success)).length;
+        
+        console.log(`PO processing invocations: ${successful} successful, ${failed} failed out of ${purchaseOrderAttachments.length} total`);
+        
+        // If any failed, alert but don't throw (since some succeeded)
+        if (failed > 0) {
+            await sendAlert({
+                message: `Classification completed with ${failed} failed PO invocations out of ${purchaseOrderAttachments.length}. Timestamp: ${event.timestamp}`
+            });
         }
     }
 

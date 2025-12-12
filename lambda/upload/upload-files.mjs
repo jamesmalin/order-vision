@@ -2,12 +2,12 @@ import https from 'https';
 import fs from 'fs';
 
 const files = [
-        {
-            "FileName": "ABC.PDF",
-            "Url": "https://order-vision-ai-dev.s3.us-east-2.amazonaws.com/uploads/1743732000000/ABC.PDF?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAY6BBM3Y27BYWRC3T%2F20250923%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250923T011824Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJGMEQCIBqAazfNkUEyq0XlD1T5%2BA5X%2Fj0I3HzB57MDTCmmQ1g%2FAiAmlx%2BucvscgujFZR3ZjbMz7cXVb7ABHuSBm2mfV9Gmkyr6Agg6EAEaDDYxNDI1MDM3MjY2MSIMetJaUaOw%2FmoWp1OJKtcCkmTm2Dy6mSyWA58g2VXhbnJvjhB9OfJCB%2BwLeGEpl0oD2cHC1tDqtB%2BxX8JTdrbi2O1sARruV71DiTe%2BlsvnBy4Ooz4plvC13XgW1BniyJBUCb01bOfqMbcGm5o86IBQXfSMhVfp2%2Fl6IhyC1kER3xzJb%2Fbf7HP%2F0bheaaaMTrdiRZYG1r4ayQbGa9fHDv3LwNmd%2FuNiFdUuTq11ubKxqTeveCnN2Sye%2BCY1aa6cUkbMfvHHk8UIj11Cr6dC1ngIXQCVWTXfTgcgobDxGBOnMUlruy182avvBq4FYVWpKPI2iyjetjSD7VB8BUfe4oP%2BIFYVzZeeakQkRVE3WOpsMJLJ0poWX4CDaaNYitIvYsgRjDQp7Hdo9%2FiLxQjWMtiDkO9fMZYW59BhcddEfjr%2FUkMPl9Fxmwi8Yzw5jJF4JB48nlRgLmSprjOI2jlrpfJecroVsIWQPzDV6sfGBjqfAXZ1h79lOgFDBaViU6HE1xVCTVKKzzLli0JJmq1LTxV%2FS5zI2kwhlihfHprIKVHVeLSqWFViJ7hCX48BthejQyLeUsnBwU5sFK%2Be0erBDQwbWmaRdQlwdk43%2Bga9ZpYHtw7jbZVweixyGZwOlD4Cm%2BQ%2FlOlTHdSUFxcB9dlT9tYtktDlZCMXgMkpYjhLr7FOjIRGqwZpMa80Q1wJKOo%2BFQ%3D%3D&X-Amz-Signature=e9a6d88df106b38d1ddf104d4623b3800e21fb12b4b4aaf34627ceaecdb67564&X-Amz-SignedHeaders=host&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject",
-            "FileKey": "uploads/1743732000000/ABC.PDF"
-        }
-    ];
+    {
+        "FileName": "henryschine.pdf",
+        "Url": "https://order-vision-ai-dev.s3.us-east-2.amazonaws.com/uploads/1743732000000/henryschine.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAY6BBM3Y2QBHFWLCX%2F20251117%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20251117T233623Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJHMEUCIQDy0LQf%2BhFZtQdNVJ%2BOsaHiCWWHy8hwBT21HX5TihTcMgIgXBEAuOfMc2Z5dx5L%2FSRR4iIfmwrUNTc5XPEXBmGKLwwqgwMIuf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw2MTQyNTAzNzI2NjEiDNWiVt9D0wnBu3sL%2BirXAvzuxJeca65YWh%2Bt8w1DpewfKWGhuItkE75P2OSEa%2F4flBvG1HcbRx6qNX%2Bb0kzE2YhjsK6lcaYJTjOJd%2FMh5dx5N10rjEldtjSz%2BreinfF01a6WiYh6T8%2BV7xqXqB9udgc8l564%2BfEl3jIu2IXWTKzCcMQzkMaGRhG9qpmjNzNY%2BmLeuarfcN69ZEt7DtZRMgJJzbiLH34j6GyO5Vikc2ifFsWG8gbtBLaAFV48ZKPEXpwnXMhWn9Wgf%2F46A5gmFRCWDLS8RjcBXBpQgbgpOG%2BvUUIi6AROFR3NwigopPAQUg5g4WybOV3YnQmZKayALb0g6fI2DYmiYTl6HdHMvrRZrHMrzZvCLTr4tZctdgaOvSLRXs%2Ba1Fe%2BqZs4f27MNpRvNe3z7pA2LKjJd2M3RqQS%2FwxtaRCZ%2Fh7uT%2Fg1pyA7p6TIhu%2Bgmlo1dGcLVan9r1FOU8QkojIw9eLuyAY6ngE4U91YUyUgPsEiqD%2FkSN5XnRrqCPH7izf1p3ziJWqO3ph0bAyGtzqV%2BQtuI5EusrlKHZNe%2FcCqO%2BOWrLQBbHQDD5RT8AZRlR6vGqY%2FolKqJIjmBj7lKw4NCQWsqLuwedrf%2Fjhh6Ib%2F873ln65oKAvwghKft4vRp4vCuraL49ifuIiHjv8hI%2FcROp9UxJtPXc4LCut1NyV1AQKvgRvLZw%3D%3D&X-Amz-Signature=6fd5c3da322170c2d91a6f6d696a355e9bb8c44a1dfd2bb504a1b2d2ed8a4c0f&X-Amz-SignedHeaders=host&x-amz-checksum-crc32=AAAAAA%3D%3D&x-amz-sdk-checksum-algorithm=CRC32&x-id=PutObject",
+        "FileKey": "uploads/1743732000000/henryschine.pdf"
+    }
+];
 
 function getFileSize(filePath) {
     const stats = fs.statSync(filePath);
